@@ -1,0 +1,13 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 0,
+  "title"              : "Week 3",
+  "short_description"  : "",
+  "identifier"         : "",
+  "authors"            : [],
+  "focus"              : ["lists","higher-order functions"],
+  "requirements"       : [],
+  "forward_exercises"  : [],
+  "backward_exercises" : []
+}

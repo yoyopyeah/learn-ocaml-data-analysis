@@ -1,0 +1,305 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["asciimath2jax.js"],
+  })
+</script>
+
+<h2>General remarks</h2>
+
+<p> In case you need any auxiliary functions, make sure to write them inside the main body of the pre-declared functions we provide. If necessary, you can also call functions declared in the prelude or other functions declared in the template. </p>
+
+<p>
+  One of the learning objectives for COMP302 is learning how to write
+  clear, correct, and <em>elegant</em> code. From this assignment
+  on, please follow these
+  these <a href="https://www.cs.cornell.edu/courses/cs3110/2018sp/handouts/style.html">style
+  guidelines</a> when preparing your assignments. You may also find the OCaml project's
+  has <a href="https://ocaml.org/learn/tutorials/guidelines.html">programming
+  guidelines</a> helpful.
+</p>
+
+<h2>Maximum Likelihood</h2>
+<ol>
+  <li>
+      <p>
+        Here's a problem you might be familiar with if you've taken statistics:
+      </p>
+
+      <p>
+        You have a jar with 6 marbles in it. Some of the marbles are black and some of the marbles are white. The goal is to guess the number of black marbles in the jar.
+      </p>
+
+      <p>
+        Before you make your guess, you are allowed to draw 3 marbles from the jar, look at their colours, and then put them back in the jar. You can do this as many times as you would like.
+      </p>
+
+      <p>
+        Let's look at a concrete example. You draw 3 marbles from the jar: 2 are black and 1 is white. From this you know that there are 2 to 5 black marbles in the jar. In fact, from your probability class, you know that the probability that you drew exactly 2 black marbles, given that there are `N` black marbles in the jar, is given by the following equation:
+      </p>
+
+      <center>
+        <p>`P_N(X = 2) = (((N), (2)) ((6 - N), (1)))/(((6), (3)))`</p>
+      </center>
+
+      <p>
+        (Recall that the binomial coefficient `((n), (k))` is calculated as `(n!)/((k!) (n - k)!)`.)
+      </p>
+
+      <p>
+        Thus you can calculate the following <em>distribution table</em>:
+      </p>
+
+      <center>
+        <table>
+          <tr>
+            <td></td>
+            <td>
+              `[P_0(X = 2), P_1(X = 2), P_2(X = 2), P_3(X = 2), P_4(X = 2), P_5(X = 2), P_6(X = 2)]`
+            </td>
+          </tr>
+          <tr>
+            <td>`=`</td>
+            <td>
+              `[0, 0, 0.2, 0.45, 0.6, 0.5, 0]`
+            </td>
+          </tr>
+        </table>
+      </center>
+
+      <p>
+        You now repeat this process twice more, drawing 0 black marbles the first time and 1 black marble the second time. By computing the distribution tables for each of these results and combining them with the first, you obtain the following <em>distribution matrix</em> `M`:
+      </p>
+
+      <center>
+        <p>
+          `M = [[0, 0,   0.2, 0.45, 0.6, 0.5, 0],
+                [1, 0.5, 0.2, 0.05, 0,   0,   0],
+                [0, 0.5, 0.6, 0.45, 0.2, 0,   0]]`
+        </p>
+      </center>
+
+      <p>
+        (Note that the `i`th row of this matrix is the distribution table from the `i`th experiment.)
+      </p>
+
+      Finally, from this distribution matrix you can compute the <em>combined distribution</em>, where the `i`th entry of the combined distribution table is given by `M_(0, i) times M_(1, i) times M_(2, i)` (note that we have rounded floating-point numbers to 3 decimal places):
+
+      <center>
+        <p>
+          `[0, 0, 0.024, 0.01, 0, 0, 0]`
+        </p>
+      </center>
+
+      <p>
+        The value at index `2` of the combined distribution table is the highest, so you can guess that it is most likely that there are 2 black marbles in the jar. This is called the <em>maximum likelihood estimate</em>.
+      </p>
+
+      <p>
+        For this exercise, you will be implementing the missing parts in the template using higher-order functions in order to compute the maximum likelihood. You <strong>must not</strong> use manual recursion to implement any of the following functions, <em>except</em> for <code>combined_dist_table</code>. If you implement any of the other functions using recursion you will receive <strong>zero</strong>.
+      </p>
+
+      <p>
+        In the prelude, we have provided you with the following functions that you will find useful:
+      </p>
+
+    <ul>
+      <li>
+        <p>
+          <code>dist_black: int -> int -> (int * int) -> float</code> implements the first equation in the example above. That is, <code>dist_black n x (marblesTotal, marblesDrawn)</code> returns `P_n(X = x)` given that there are <code>marblesTotal</code> marbles in the jar and you drew <code>marblesDrawn</code> marbles from the jar.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <code>tabulate: (int -> 'a) -> int -> 'a list</code> is a higher-order function. <code>tabulate f n</code> returns the list <code>[f 0; f 1; ...; f n]</code>.
+        </p>
+      </li>
+    </ul>
+
+       
+    <p>
+      You are not required to write tests for all the functions (although we recommend it). Please check the provided template to see if you are required to write tests for a particular function or not.
+    </p>
+          
+
+    <ol type="a">
+      <li>
+        <p>
+          To ensure that you understand the behaviour of the provided function <code>tabulate</code>, write some test cases for it. We have provided a sample test case for you, but this test case will not be helpful in uncovering any bugs.
+        </p>
+
+        <p><strong>Please note a couple of things when writing your tests:</strong></p>
+
+        <ul>
+          <li>
+            <p>
+              This is the first time you are writing tests for a function that takes in multiple inputs. Your tests for <code>tabulate</code> should be of the form <code>((f, n), output)</code>, <em>not</em> <code>(f, n, output)</code>. If your tests are not of the correct form you will get a type error.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Although <code>tabulate</code> is a polymorphic function, your test cases must all have the same concrete type <code>(((int -> int) * int) * int list)</code>, i.e., you should only provide test cases for <code>tabulate</code> with expected outputs of type <code>int list</code>.
+            </p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <p>
+      For the rest of the functions in this exercise (except for <code>is_empty</code>), we will not be having you submit your own test cases. However, this does not mean that you should not test your own code! You should make use of the toplevel to evaluate your functions on some test inputs to make sure that they are working as you expect.
+    </p>
+    <ol type="a" start="2">
+      <li>
+        <p>
+          Implement the function <code>dist_table: (int * int) -> int -> float list</code> such that <code>dist_table (marblesTotal, marblesDrawn) x</code> calculates a distribution table given that there are <code>marblesTotal</code> marbles in the jar and you drew <code>marblesDrawn</code> marbles, of which <code>x</code> were black marbles. For example, using the numbers from above:
+        </p>
+
+        <pre>
+            dist_table (6, 3) 2;;
+            - : float list = [0.; 0.; 0.2; 0.45; 0.6; 0.5; 0.]</pre>
+
+        <p>
+          You may assume that <code>marblesTotal</code> `>=` <code>marblesDrawn</code> `> 0`.
+        </p>
+
+        <p>
+          <strong>In order to get full marks</strong>, you should implement this using the <code>tabulate</code> function.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          We will represent a distribution matrix as a list of lists, where element `i` of the matrix is the distribution table for the `i`th experiment.
+        </p>
+
+        <ol type="i">
+          <li>
+            <p>
+              Write tests for and then implement the function <code>is_empty: 'a list list -> bool</code> which returns <code>true</code> if the given matrix is empty. A matrix is empty if <strong>each row</strong> within it is empty. <strong>In order to get full marks</strong>, you should implement <code>is_empty</code> using the <code>List.for_all</code> function.
+            </p>
+
+            <p>
+              As before, you should only provide test cases for <code>is_empty</code> using inputs of type <code>float list list</code>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Implement the function <code>dist_matrix: int * int -> int list -> float list list</code> such that <code>dist_matrix (marblesTotal, marblesDrawn) resultList</code> computes a distribution matrix, by computing the distribution table for each experiment in <code>resultList</code> with the given parameters <code>marblesTotal</code> and <code>marblesDrawn</code>. For example, this is how we would calculate the distribution matrix above:
+            </p>
+
+            <pre>
+              # dist_matrix (6, 3) [2; 0; 1];;
+              - : float list list =
+                    [[0.; 0. ; 0.2; 0.45; 0.6; 0.5; 0.];
+                     [1.; 0.5; 0.2; 0.05; 0. ; 0. ; 0.];
+                     [0.; 0.5; 0.6; 0.45; 0.2; 0. ; 0.]]</pre>
+
+            <p>
+              <strong>In order to get full marks</strong>, you should implement this using the <code>List.map</code> function.
+            </p>
+          </li>
+        </ol>
+      </li>
+
+      <li>
+        <p>
+          Implement the function <code>combined_dist_table: float list list -> float list</code> that computes a combined distribution table from a distribution matrix. For example:
+        </p>
+
+        <pre>
+          combined_dist_table (dist_matrix (6, 3) [2; 0; 1]);;
+          - : float list = [0.; 0.; 0.024; 0.0101250000000000021; 0.; 0.; 0.]</pre>
+
+        <p>
+          In <code>combined_dist_table</code>, you may assume that all rows within the input matrix are of the same size.
+        </p>
+
+        <p>
+          <strong>In order to get full marks</strong>, you should implement this using <code>List.map</code>, and either <code>List.fold_left</code> or <code>List.fold_right</code>. <strong>Hint</strong>: somewhat related to this, you will need to use <code>is_empty</code> in your implementation. You may also find the functions <code>List.hd</code> and <code>List.tl</code> useful, but you are not required to use them. </p>
+
+        <p>
+           A very elegant non-recursive solution is possible using <code>List.map2</code> and one of the fold functions, which we will also accept. Note that you are allowed to make recursive calls to <code>combined_dist_table</code>, since we declare it with `rec` in the exercise template.
+        </p>
+      </li>
+    </ol>
+  </li>
+</ol>
+<h2>Let's have cake!</h2>
+<ol start="2">
+  <li>
+    <p>We can define a cake together with the ingredients in a cake using the following inductive data types. </p>
+
+    <pre>
+     type ingredients = Chocolate | Orange | Almonds | Vanilla | Flour | BlackBeans
+
+     type cake = Slice of ingredients list | Cake of cake * cake
+    </pre>
+
+     <p> In prelude.ml we have implemented some useful functions working on lists </p>
+
+    <pre>
+    let rec insert x l = match l with
+      | [] -> [x]
+      | y::ys -> if x = y then l else y::(insert x ys)
+               
+    let rec union l1 l2 = match l2 with
+      | [] -> l1
+      | x::xs -> union (insert x l1) xs
+    </pre>
+
+    <p>
+      Note that you are not required to write tests for all the functions (although we recommend it). Please check the provided template to see if you are required to write tests for a particular function or not.
+    </p>
+
+  <ol type="a">
+    <li> <p>Cake Traversals</p>
+      <p>
+        In this problem set, we are exploring generic cake traversals which allow us to define efficiently and elegantly various queries we would like to make about cakes.
+      </p>
+      <p>
+        First, implement a function 
+      </p>
+      <pre>
+        all: (ingredients list -> bool) -> cake -> bool
+      </pre>
+      <p>
+        <code>all</code> takes in two parameters `p` and `c`. `p` is a function that takes a list of ingredients and returns a bool and `c` is a cake. Think of p as a property we want to check for every slice of the cake. <code>all</code> should return true if p returns true for the ingredients of every slice, and false otherwise.
+      </p>
+    </li>
+
+    <li>
+      <p> Given this sample chocolate cake, we can then check whether it is indeed a chocolate cake, i.e. all slices contain chocolate </p>
+      <pre>                 
+        let ccake = Cake (Slice [Chocolate ; Flour], Cake (Slice [Chocolate ; Almonds] , Slice [Chocolate ; BlackBeans]))
+      </pre>
+      <p> Implement the function </p>
+        <pre>is_chocolate_cake: cake -> bool</pre>
+      <p> using the previous function all to check that we have indeed a chocolate cake where all slices contain chocolate </p>
+    </li>
+    <li>
+      <p> Implement the function </p> <pre>map: (ingredients list -> ingredients list) -> cake -> cake </pre>
+
+      <p>It takes as input a function</p> <pre>(f:ingredients list -> ingredients list)</pre> <p> which transforms a list of ingredients and a cake. It returns a cake of the same structure as the input cake, but where the ingredients list in a slice has been transformed according to f. </p>
+ 
+    </li>
+    <li>
+      <p>Implement the function</p> <pre>add_ingredient: ingredients -> cake -> cake</pre> <p> It takes as input an ingredient and a cake and adds the new ingredient to all slices of a cake. Ensure that all ingredients occur only once, i.e. if the ingredient is already present in a slice, don’t add it. When adding an ingredient to a list, append it to the end of the list.</p>
+
+      <p>Use the function map, to add a new ingredient to all slices of a given cake!</p>
+    </li>
+    <li>
+      <p> Implement the function </p> <pre>fold_cake: (ingredients list -> 'a -> 'a) -> 'a -> cake -> 'a </pre>
+
+      <p>It takes a function</p> <pre> f:(ingredients list -> 'a -> 'a)</pre> <p> and a </p> <pre>(base:'a) </pre> together with a cake as input. It folds over all the slices in the cake and combines all the ingredients lists together using function f. </p>
+
+    </li>
+    <li>
+      <p> Implement the function</p> <pre> get_all_ingredients: cake -> ingredients list </pre> <p> It takes as input a cake and returns a list of all the ingredients that the slices consists of without duplicates (i.e. each ingredient is only listed once). </p>
+
+      <p>Use fold_cake to implement the function get_all_ingredients. </p>
+
+    </li>
+  </ol>
+</li>
+</ol>

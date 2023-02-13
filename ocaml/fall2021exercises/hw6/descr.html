@@ -1,0 +1,468 @@
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   extensions: ["asciimath2jax.js"],
+   asciimath2jax: {
+     delimiters: [['`','`'], ['$','$']]
+   },
+   "HTML-CSS": {
+       availableFonts: ["TeX"]
+   }
+ })
+</script>
+<style>
+  table.inference-rules tr > td {
+      text-align: center;
+      padding: 0.7em 0;
+  }
+</style>
+
+<p>
+  <strong>Note</strong>: the prelude for this exercise is quite long. However, we will point you to the useful functions in the prelude when relevant, so you shouldn't try to read it all at once.
+</p>
+
+<p>
+  <strong>Note</strong>: you must not use references / assignment (":=") outside of question 5.
+</p>
+
+<h2> A DIY programming language: MiniCAML </h2>
+
+<p>
+  In this homework, you will implement a programming language called MiniCAML, in OCaml. The goal is to explore concepts such as free variables, substitution, evaluation, type checking, and type inference.
+</p>
+
+<p>
+  MiniCAML is very similar to the language you have seen in class, and also it is quite similar to OCaml. Compared to the language described in class, MiniCAML adds $n$-ary function abstraction and application, and recursion. Compared to OCaml, MiniCAML lacks pattern matching, user-defined datatypes, exceptions, and modules.
+</p>
+
+<p>
+  The grammar of MiniCAML is the following.
+  <center>
+  <table>
+    <tr>
+      <td> Type&nbsp;$\tau$ </td>
+      <td> $"::="$ </td>
+      <td>
+	$ \text{int}\ |\ \text{bool}\ |\ tau_1\ \ldots\ tau_n \to tau $
+      </td>
+    </tr>
+    <tr>
+      <td> Expression&nbsp;$e$ </td>
+      <td> $"::="$ </td>
+      <td>
+	$ \ldots\ |\ \text{rec}\ (f: tau) \Rightarrow e\ |\ \text{fun}\ (x_1: tau_1, \ldots, x_n: tau_n) \Rightarrow e\ |\ e\ e_1\ \ldots\ e_n
+	$
+      </td>
+    </tr>
+  </table>
+  </center>
+</p>
+
+<p>
+  If you are not sure how to read this, please refer to the course notes: chapter 9, section 9.1.
+</p>
+
+<p>
+  For this assignment, we have extended the syntactic category for expressions with $n$-ary function abstractions, $n$-ary function applications, and recursion:
+</p>
+
+<ul>
+  <li>
+    <p>
+      Instead of abstracting over a single variable, as you saw in class, the $"fun"$ construct in MiniCAML now abstracts over <em>multiple</em> variables at once. This means we can construct functions of multiple variables:
+    </p>
+
+    <pre>
+fun (x: int, y: int) => (x * x) + (y * y)</pre>
+
+    <p>
+      Unlike in OCaml, these functions are <em>not</em> implicitly curried. They need to be called with exactly the correct number of arguments. This is the same behaviour as in other languages you may be familiar with such as C, Java, or Python.
+    </p>
+
+    <p>
+      We can also define functions that take <em>zero</em> arguments:
+    </p>
+
+    <pre>
+fun () => true</pre>
+
+    <p>
+      This is also behaviour you may recognize from other programming languages.
+    </p>
+
+    <p>
+      To reflect that functions can now abstract over any number of arguments at once, the arrow type in our grammar has been modified from what you saw in class. The types of the functions given in the two previous examples would be written as $"int"\ "int" \to "int"$ and $\to\ "bool"$, respectively.
+    </p>
+
+    <p>
+      <strong>Note</strong>: you may assume that all the names of the bound variables in a particular function abstraction are unique, e.g. the expression <code>fun (x: int, x: int) => x + x</code> is <strong>invalid</strong> since <code>x</code> is repeated within a single function abstraction, and we would not test you on this. However, the expression <code>fun (x: int) => fun (x: int) => x + x</code> is perfectly valid, since <code>x</code> is <em>not</em> repeated in a single function abstraction.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Since functions now abstract over multiple variables, we also need a way to apply a function to multiple variables at once. Function application in MiniCAML has thus been extended from what you saw in class:
+    </p>
+
+    <pre>
+let f = (fun (x: int, y: int) => (x * x) + (y * y))
+in
+f (3, 4)</pre>
+
+    <p>
+      We can also call a function with zero arguments:
+    </p>
+
+    <pre>
+let g = (fun () => true)
+in
+g ()</pre>
+
+    <p>
+      Unlike in OCaml, there is <em>no</em> implicit partial application of functions. This means that the following expression is <strong>ill-typed</strong>:
+    </p>
+
+    <pre>
+let f = (fun (x: int, y: int) => (x * x) + (y * y))
+in
+f (3)</pre>
+
+    <p>
+      If we wanted to be able to apply <code>f</code> to just one argument at a time, we would instead write this:
+    </p>
+
+    <pre>
+let f = (fun (x: int) => (fun (y: int) => (x * x) + (y * y)))
+in
+(f (3)) (4)</pre>
+
+    <p>
+      Note that in this case, calling <code>f (3, 4)</code> would result in a type error.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Finally, the $"rec"$ construct allows us to define recursive functions:
+    </p>
+
+    <pre>
+rec (fact: int -> int) => fun (n: int) =>
+  if n = 0 then 1 else n * fact (n - 1)</pre>
+
+    <p>
+      The $"rec"$ construct binds a new variable (<code>fact</code> in the above example) which we may then refer to within its body. See also section 9.6.4 in the course notes.
+    </p>
+  </li>
+</ul>
+
+<p>
+  In the prelude, we define the types <code>tp</code> and <code>exp</code>, which correspond to the Type and Expression categories from the grammar.
+</p>
+
+<p>
+  The prelude also includes a few example programs written in the MiniCAML
+  abstract syntax tree (AST). Take a moment to look at them to see how to the
+  constructors of the AST are used to write programs. We recommend evaluating the examples in the toplevel instead of trying to read the code in the prelude box, since it is quite small.
+</p>
+
+<p>
+  Finally, the prelude includes a function <code>print_exp: exp -> unit</code> which you can use to print out programs in the MiniCAML AST in a more readable form. The implementation of <code>print_exp</code> is quite basic, so the printed representations are not always perfect, but you will likely find it very helpful for debugging. We recommend you try it out on the example expressions we have provided.
+</p>
+
+<h3>Question 1: <code>unused_vars</code></h3>
+
+<p>
+  Something you may have noticed in OCaml is that the compiler warns you when you have unused variables. For example, consider the OCaml function <code>fun x -> 5</code>. The variable <code>x</code> is unused, since does not occur <em>free</em> in the body of the function. We would like to support this feature in the MiniCAML interpreter.
+</p>
+
+<p>
+  Write tests for, and then implement, the missing cases in the function <code>unused_vars: exp -> name list</code>. As you can see from the cases already implemented, the function recursively traverses the input expression to collect the unused variables. When the function arrives at a binding construct (such as <code>Let</code>) it decides whether the variable being introduced by the construct is unused by checking whether the variable is free in the body of the construct. We have provided a function <code>free_variables: exp -> name list</code> in the prelude for this purpose. The prelude also contains a function <code>delete: 'a list -> 'a list -> 'a list</code> such that <code>delete xs l</code> removes all elements from <code>l</code> that occur in <code>xs</code>.
+</p>
+
+<p>
+  Keep in mind that, since our language supports $n$-ary function abstraction, the <code>Fn</code> construct is a binding construct which can introduce <em>multiple</em> variables at once!
+</p>
+
+<p>
+  Note that you should only write test cases for the cases in <code>unused_vars</code> that are not already implemented, i.e., there is no need to write test cases for <code>If</code>, <code>Let</code>, etc. We are only interested in the new cases that you are adding.
+</p>
+
+<p>
+  Note also that the order of names in your test cases and in the output of <code>unused_vars</code> <em>does not matter</em>: the grader will accept correct solutions regardless of order. There may also be duplicate names in your result in the case that a variable name is re-used: this is fine, and you should not do any special handling to remove these.
+</p>
+
+
+<h3>Question 2: <code>subst</code></h3>
+
+<p>
+  Extend the function <code>subst: exp * name -> exp -> exp</code> by
+  writing tests for, and then implementing, the missing cases. Once again, you are only required to write tests for the unimplemented cases of <code>subst</code>.
+</p>
+<ul>
+  <li>
+    The first argument, e.g. <code>(e', x): exp * name</code>, represents the
+    substitution that we would normally write as $[e'//x]$.
+    $x$ is the variable to be replaced, and $e'$ is the expression to replace it with.
+  </li>
+  <li>
+    The second argument, of type <code>exp</code>, is the expression on which to perform the substitution.
+  </li>
+</ul>
+<p>
+  In other words, <code>subst (e', x) e = [e'/x] e</code>.
+</p>
+
+<p>
+  To implement some of the missing cases of <code>subst</code>, you will need the <code>rename: name -> exp -> (name * exp)</code> and <code>rename_all: name list -> exp -> (name list * exp)</code> functions for renaming a single variable in an expression and a list of variables in an expression, respectively. For a review of why this is necessary, see section 9.6.2 of the course notes. The functions <code>rename</code> and <code>rename_all</code> are fully implemented for you in the template, so you should not need to change them.
+</p>
+
+<p>
+  Note that the particular names of variables in your test cases and in the output of <code>subst</code> are not important. The grader will consider, for example, the expressions <code>fun (x: t) -> x</code> and <code>fun (y: t) -> y</code> as equivalent.
+</p>
+
+<h3>Question 3: <code>eval</code></h3>
+
+<p>
+  In this question, we implement an interpreter based on <em>big-step evaluation</em>, meaning that the interpreter takes as input an expression and outputs a <em>value</em>, an expression in which no more computation is possible. Below are the <em>inference rules</em> for big-step evaluation of the new constructs in MiniCAML. These can be translated almost directly into OCaml code if you read them bottom-up. For an in-depth refresher on evaluation and inference rules, see section 9.2. of the course notes.
+</p>
+
+<center>
+<table class="inference-rules">
+  <tr>
+    <td>
+      $
+      (["rec"\ (f: \tau) rArr e // f] e ⇓ v)
+      /
+      ("rec"\ (f: \tau) rArr e ⇓ v)
+      "b-rec"
+      $
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $
+      ()
+      /
+      ("fun"\ (x_1: tau_1, \ldots, x_n: tau_n) rArr e ⇓ "fun"\ (x_1: tau_1, \ldots, x_n: tau_n) rArr e)
+      "b-fn"
+      $
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $
+      ((e ⇓ "fun"\ (x_1: tau_1, \ldots, x_n: tau_n) rArr e^{'})
+      \quad\quad
+      ("for all"\ i.\ \quad e_i ⇓ v_i)
+      \quad\quad
+      [v_1//x_1, \ldots, v_n//x_n]e^{'} ⇓ v)
+      /
+      (e\ e_1\ \ldots\ e_n ⇓ v)
+      "b-app"
+      $
+    </td>
+  </tr>
+</table>
+</center>
+
+<p>
+  Write tests for, and then implement, the missing cases of the function <code>eval: exp -> exp</code>. You will find the function <code>subst_list: subst list -> exp -> exp</code>, which is fully defined in the template, useful for implementing the <code>Apply</code> case. You may also find the library function <code>List.combine</code> helpful.
+</p>
+
+<p>
+  If your evaluator encounters a situation not represented by these rules, you should raise the exception <code>Stuck</code> with the appropriate value of type <code>runtime_error</code> as defined in the prelude. For the missing cases of <code>eval</code>, you will need to raise the following runtime errors:
+</p>
+
+<ul>
+  <li>
+    <p>
+      If a function is called with the incorrect number of arguments, you should raise <code>Stuck Arity_mismatch</code>.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      If the function expression of <code>Apply</code> does not evaluate to a function value, you should raise <code>Stuck Apply_non_fn</code>.
+    </p>
+  </li>
+</ul>
+
+<p>
+  Note that for this question you only need to test and implement the cases for <code>Rec</code> and <code>Apply</code> (since functions are already values, they do not need to be evaluated any more!). As always, you should <em>not</em> write tests for inputs that would raise an error, and should instead manually test those yourself in the toplevel, as we will still be grading you on them.
+</p>
+
+<h3>Question 4: <code>infer</code></h3>
+
+<p>
+  In this question, the goal is to <em>infer</em> the type of an expression. Since functions and recursion include type annotations, every expression is guaranteed to have a unique type. (This is something you would <em>prove</em> in COMP 527, but for now simply accept it as fact.)
+</p>
+
+<p>
+  To describe the type inference algorithm you must implement, we will use typing rules. The main judgement of the rule is
+  <center>
+    $\Gamma \vdash e:\ tau$
+  </center>
+  meaning "in context $\Gamma$, infer type $tau$ for expression $e$." See chapter 10 of the course notes for a review on typing, and particularly section 10.3 for a review on contexts.
+</p>
+
+<p>
+  The inference rules for the new categories of expressions are the following.
+</p>
+
+<center>
+<table class="inference-rules">
+  <tr>
+    <td>
+      $
+      (\Gamma, x_1: tau_1,\ \ldots,\ x_n: tau_n \vdash e:\ \tau)
+      /
+      (\Gamma \vdash ("fun"\  (x_1: tau_1, \ldots, x_n: tau_n) rArr e):\ tau_1\ \ldots\ tau_n \to tau)
+      "t-fn"
+      $
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $
+      ((\Gamma \vdash e:\ tau_1\ \ldots\ tau_n \to tau)
+      \quad\quad
+      ("for all"\  i
+      \quad\quad
+      \Gamma \vdash e_i:\ \tau_i))
+      /
+      (\Gamma \vdash e\ e_1\ \ldots\ e_n:\ tau)
+      "t-app"
+      $
+    </td>
+  </tr>
+  <tr>
+    <td>
+      $
+      (\Gamma, f: tau \vdash e:\ tau^{'}
+      \quad\quad
+      tau = tau^{'})
+      /
+      (\Gamma \vdash ("rec"\  (f: tau) rArr e):\ tau)
+      "t-rec"
+      $
+    </td>
+  </tr>
+</table>
+</center>
+
+<p>
+  Using these inference rules, write tests for and fill in the missing cases of <code>infer: context -> exp -> tp</code>. The type of a context is defined for you in the prelude; we also provide the functions <code>extend: context -> (name * tp) -> context</code> and <code>extend_list: context -> (name * tp) list -> context</code> for extending a given context with one or several type ascriptions. If you encounter a type error during type inference, you should raise the exception <code>TypeError</code> with the appropriate value of type <code>type_error</code> as defined in the prelude. For the missing cases of <code>infer</code>, you will need to raise the following type errors:
+</p>
+
+<ul>
+  <li>
+    <p>
+      If the function expression of <code>Apply</code> has type <code>t'</code>, where <code>t'</code> is not of an <code>Arrow</code> type, you should raise the exception <code>TypeError (Apply_non_arrow t')</code>.
+    </p>
+  </li>
+
+  <li>
+    <p>
+      If you encounter a type mismatch (expected something of type <code>t</code>, but instead found something of type <code>t'</code>), you should raise the exception <code>TypeError (Type_mismatch t t')</code>. We have defined a helper function <code>type_mismatch</code> in the prelude for this. <strong>Note</strong>: be mindful of the order of arguments to <code>type_mismatch</code>! The first argument should be the expected type, and the second should be the actual type encountered.
+    </p>
+  </li>
+</ul>
+
+<p>
+  As before, you should not write tests for error cases, but test them on your own; and you are only required to write test cases for <code>Rec</code>, <code>Fn</code>, and <code>Apply</code>.
+</p>
+
+<h3>Question 5: Unification</h3>
+
+<p>
+  We take the first steps towards extending MiniCAML to support full type inference, like in OCaml.
+  Remember that in OCaml, it isn't necessary to write type annotations anywhere: the compiler can figure out the types of all variables for you based on how you define and use them.
+  The upshot of adding full type inference to MiniCAML is that we can remove the type annotations on the <code>Fn</code> and <code>Rec</code> constructors  for <code>exp</code>.
+</p>
+
+<p>
+  The key algorithm we need to implement type inference
+  is <em>unification</em>, which checks if two types can be made syntactically
+  equal. For example, if asked to unify $\alpha$ with $"Int" -> "Int"$, then the
+  solution is simply ${\alpha = "Int" -> "Int"}$;
+  if asked to unify $\alpha -> \beta$ with $"Int" -> "Bool"$,
+  then the solution is ${ \alpha = "Int",\ \beta = "Bool" }$.
+</p>
+
+<p>
+To support variables such as $\alpha$ and $\beta$ in types, we extend the datatype <code>tp</code> (the new extended type is called <code>utp</code>, and we have prefixed all old constructors with <code>U</code>, so that <code>Int</code> is now <code>UInt</code>, etc.) with the constructor <code>UTVar of utp option ref</code>: we model type variables using references (memory locations).
+  <ul>
+    <li> Uninstantiated type variables have the content <code>None</code>. </li>
+    <li>
+      Suppose we figure out that we need to instantiate <code>alpha : utp option ref</code> with the type <code>t : utp</code>.
+      Then we can use the assignment operator to destructively update the reference cell: <code>alpha := Some t</code>.
+      This has the benefit of automatically updating all other references to that memory cell, thus propagating the instantiation.
+    </li>
+  </ul>
+</p>
+<p>
+  Unification fails in two situations.
+  <ol>
+    <li>
+      We are trying to unify two different concrete types, e.g.  unifying <code>UInt</code> with <code>UBool</code> fails.
+    </li>
+    <li>
+      We are trying to unify a variable <code>UTVar a</code> with a type containing that variable, e.g. <code>UArrow (UInt, UTVar a)</code>.
+      This error is subtler, and requires a more explicit check.
+      <br>
+      For example, suppose we try to assign <code>a := UArrow (UInt, UTVar a)</code>.
+      In our datatype <code>utp</code> this results in a <em>circular</em> reference.
+      If we try to recurse on this type later (let's say, to print it), then the algorithm will never terminate as it gets stuck in a loop chasing the circular reference.
+      Theoretically, what has happened is that the type has become <em>infinite</em>.
+      <br>
+      So we forbid these circular references.
+      Instead, when unifying a variable against a type, you must check that the variable <em>does not occur</em> in that type.
+      To do so, use the function <code>occurs : utp option ref -> utp -> bool</code> that is implemented in the prelude for you.
+    </li>
+  </ol>
+</p>
+<p>
+  In sum, the unification algorithm is the following.
+  <ul>
+    <li>
+      Recursively call unify on type constructors' parts until base cases are reached: concrete types or type variables.
+    </li>
+    <li>
+      To unify a type variable <code>UTVar a</code> with a type <code>t</code>, check whether <code>a</code> is instantiated.
+      <ul>
+	<li>
+	  If so, follow the pointer to arrive at a type <code>t'</code> and unify <code>t'</code> with <code>t</code>
+	</li>
+	<li>
+	  If not, check whether <code>t</code> is itself some type variable <code>UTVar b</code>.
+	  <ul>
+	    <li>
+	      If not, check whether <code>a</code> occurs in <code>t</code>.
+	      If so, raise the appropriate exception.
+	      Otherwise, instantiate <code>a</code> with <code>t</code>.
+	    </li>
+	    <li>
+	      If so, check whether <code>b</code> is instantiated.
+	      <ul>
+		<li>
+		  If so, recursively unify <code>a</code> with the type that <code>b</code> is instantiated with.
+		</li>
+		<li>
+		  If not, check whether <code>a</code> and <code>b</code> are the same type variable.
+		  If so, do nothing; else, assign <code>a := Some (UTVar b)</code>.
+		</li>
+	      </ul>
+	    </li>
+	  </ul>
+	</li>
+      </ul>
+    </li>
+  </ul>
+</p>
+<p>
+  Your task is to implement the function <code>unify : utp -> utp -> unit</code> which takes two types <code>t1</code> and <code>t2</code> and updates the type variables in them such that if <code>t1</code> and <code>t2</code> are unifiable, then after unification they will denote the same type.
+  If the two types are not unifiable, you should raise the exception <code>UnifError</code> as defined for you in the prelude.
+  <br>
+  In the template, the cases for <code>unify</code> are given, but the cases for the auxiliary function <code>unifyVar</code> are not.
+  It is your task to provide the complete implementation of <code>unifyVar</code> following the algorithm description above.
+</p>

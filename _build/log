@@ -1,0 +1,5 @@
+# dune init project ocaml
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/yoyooolo/Coding/COMP400/project
+# Auto-detected concurrency: 8

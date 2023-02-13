@@ -1,0 +1,11 @@
+The travel problem has questions involving helper functions aux_node and
+aux_list. These are unspecified, and the names of their arguments are
+misleading. Many students found these helper functions to be confusing.
+
+Future course staff: either omit the helper functions, or add some prose
+explaining what they are intended to help with.
+
+-----------
+
+A solution to the Hamming series problem can be found online:
+https://github.com/cadesalaberry/ocaml-practice/blob/master/hw4/streams/stream.ml

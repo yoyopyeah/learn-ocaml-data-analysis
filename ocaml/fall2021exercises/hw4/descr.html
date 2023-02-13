@@ -1,0 +1,212 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["asciimath2jax.js"],
+  })
+</script>
+
+<p> As a general rule, if you need any auxiliary functions, make sure to write them inside the main body of the pre-declared functions we provide. If necessary, you can also call functions declared in the prelude or other functions declared in the template. Exceptions to this rule are defined in the description of individual exercises. </p>
+
+<p>This assignment is due <em>Monday, November 1, 2021 at 11:35am</em>.</p>
+
+<section id="ex1">
+<h2>Money in the bank (25 points)</h2>
+<ol>
+  <li>
+<p>
+  Define a function <code>new_account</code> that takes an initial password as an argument and creates a bank account that stores the password, the current balance of the account (initially 0), and provides four methods, with signatures as indicated in the <code>bank_account</code> type:
+</p>
+
+<ul>
+  <li>
+    <code>update_passwd</code> takes the old password as the first argument and the new password as the second argument, and updates the stored password if the provided old password is correct. It does not check if the old password is the same as the new password.
+  </li>
+  <li>
+    <code>deposit</code> allows a user to deposit money into the account, if the user provides the correct password.
+  </li>
+  <li>
+    <code>retrieve</code> allows a user to retrieve money from the account, if the user provides the correct password and there are sufficient funds available in the account.
+  </li>
+  <li>
+    <code>print_balance</code> allows the user to query the account balance, if the user provides the correct password.
+  </li>
+</ul>
+<p>
+  For all functions, you should raise an error message if the password provided is incorrect (see <code>wrong_pass</code> in the prelude). If the user has given the wrong password three times <em>in a row</em>, no <code>deposit</code>, <code>retrieve</code>, or <code>print_balance</code> operations should be allowed until the password is changed (see <code>too_many_attempts</code> in the prelude). Note that on the third incorrect attempt, the <code>wrong_pass</code> exception should be raised, and on <em>subsequent</em> attempts <code>too_many_attempts</code> should be raised, regardless of whether or not the provided password is correct. The only exception is <code>update_passwd</code> which should keep raising the <code>wrong_pass</code> error message even after 4 or more failed consecutive passwords; it should never return the <code>too_many_attempts</code> message.
+</p>
+<p>An error should also be raised if the user tries to withdraw more money than is in their account (see <code>no_money</code> in the prelude), but only if the provided password is correct. The required exceptions are provided in the prelude, and you must use them to get full credit.
+</p>
+
+<p>Here is an example of a sequence of function calls and the expected results:</p>
+
+<pre>
+# let a = new_account "123";;
+val a : bank_account =
+  {update_passwd = &lt;fun&gt;;
+   retrieve = &lt;fun&gt;;
+   deposit = &lt;fun&gt;;
+   print_balance = &lt;fun&gt;}
+# a.deposit "123" 500;;
+- : unit = ()
+# a.deposit "12" 50;;
+Exception: Msg "Wrong Password".       (* Incorrect attempts: 1 *)
+# a.update_passwd "123" "234";;
+- : unit = ()                          (* Correct password - incorrect attempts reset to 0 *)
+# a.deposit "123" 50;;
+Exception: Msg "Wrong Password".       (* Incorrect attempts: 1 *)
+# a.print_balance "123";;
+Exception: Msg "Wrong Password".       (* Incorrect attempts: 2 *)
+# a.retrieve "123" 6000;;
+Exception: Msg "Wrong Password".       (* Incorrect attempts: 3 *)
+# a.print_balance "234";;
+Exception: Msg "Change your password". (* Correct password, but too many attempts *)
+# a.print_balance "23";;
+Exception: Msg "Change your password".
+# a.update_passwd "234" "232";;
+- : unit = ()
+# a.print_balance "232";;
+- : int = 500
+# a.deposit "232" 50;;
+- : unit = ()
+# a.print_balance "232";;
+- : int = 550
+# a.retrieve "232" 100;;
+- : unit = ()
+# a.retrieve "232" 100;;
+- : unit = ()
+# a.retrieve "232" 500;;
+Exception: Msg "Insufficient funds".
+# a.print_balance "232";;
+- : int = 350
+# let b = new_account "123";;
+val b : bank_account =
+  {update_passwd = &lt;fun&gt;;
+   retrieve = &lt;fun&gt;;
+   deposit = &lt;fun&gt;;
+   print_balance = &lt;fun&gt;}
+# b.deposit "123" 700;;
+- : unit = ()
+# b.update_passwd "123" "232";;
+- : unit = ()
+# b.print_balance "232";;
+- : int = 700
+# a.print_balance "232";;
+- : int = 350
+</pre>
+</li>
+</ol>
+
+
+<section id="ex2">
+<h2>Memoization (75 points)</h2>
+<ol start="2">
+  <li>
+<p>
+    In the absence of effects, a function will always evaluate to the same value when applied to the same arguments. Therefore, applying a particular function to the same arguments more than once will often result in needless work. Memoization is a simple optimization that helps to avoid this inefficiency.
+</p>
+
+<p>
+In this exercise we explore the power of memoization to increase the efficiency of computing a recursively-defined function whose pattern of recursion involves a substantial amount of redundant computation. As an example of such a function we consider fibonacci.
+</p>
+
+<p>
+    The idea is to maintain a table of values of the function that is filled in whenever the function is applied.  If the function is called on an argument `n`, the table is consulted to see whether the value has already been computed; if so, it is simply returned.  If not, we compute the value and store it in the table for future use.  This ensures that no redundant computations are performed.
+</p>
+
+<p>
+</p>
+<ol>
+  <li>
+    <h3>Understanding Inefficiencies (10 points)</h3>
+    <p>
+        To better understand the inefficiency that comes from the recursive calls, we want to instrument the program <code>fib</code> and count the number of recursive calls. Your task is to implement the function <code>fib_I: int -> fib_result</code> such that a call to <code>fib_I n</code> returns a record containing the <code>n</code>th Fibonacci number, and the number of recursive calls our inefficient implementation of <code>fib</code> makes to compute it. You should do this by copying the given code for the function <code>fib</code> from the prelude and adding the necessary code to count and return the number of recursive calls. Note that the type <code>fib_result</code> is defined for you in the prelude. Make sure to count the number of recursive calls using a reference cell.
+    </p>
+
+    <p>
+    For example:
+   </p>
+
+  <pre>
+# fib_I 0;;
+- : fib_result = {num_rec = 1; result = 0}
+# fib_I 1;;
+- : fib_result = {num_rec = 1; result = 1}
+# fib_I 2;;
+- : fib_result = {num_rec = 3; result = 1}
+# fib_I 3;;
+- : fib_result = {num_rec = 5; result = 2}
+# fib_I 4;;
+- : fib_result = {num_rec = 9; result = 3}
+# fib_I 5;;
+- : fib_result = {num_rec = 15; result = 5}
+# fib_I 9;;
+- : fib_result = {num_rec = 109; result = 34}
+  </pre>
+  </li>
+
+  <li>
+    <h3>Memoizing Intermediate Results (first cut) (20 points)</h3>
+    <p>
+        To memoize intermediate results, we proceed as follows. First we create a global store (this is done for you in the prelude):
+    </p>
+
+    <p>
+        <code>let store = Hashtbl.create 1000 (* creates a hash table with initial capacity for 1000 entries *)</code>
+    </p>
+
+    <p>
+        When we call the function <code>fib_memo n</code>, we first check whether we already have computed the n-th Fibonacci number by looking up <code>n</code>  in the store. If we find the corresponding Fibonacci number in the store, we return it. If not, we compute the Fibonacci number and before returning the result, we store it in the hash table <code>store</code> under the key <code>n</code>.
+    </p>
+
+    <p>
+        Here are some helpful functions for hash tables from the OCaml library. <strong>You must use <code>Hashtbl.find_opt</code> and <code>Hashtbl.add</code> on the global store <code>store</code> to get full marks.</strong>
+    </p>
+
+    <ul>
+      <li>
+        <code>Hashtbl.find_opt h k</code> takes as input a hash table <code>h</code> together with a key <code>k</code> and looks up the entry of <code>k</code> in the hash table. It then returns <code>Some v</code> if <code>v</code> is in <code>h</code> under key <code>k</code>, or <code>None</code> if <code>k</code> is not present in the hash table.
+      </li>
+      <li>
+        <code>Hashtbl.add h k v</code> adds to the hash table <code>h</code> an entry mapping the key <code>k</code> to the value <code>v</code>.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <h3>Memoizing Intermediate Results (second cut) (32 points)</h3>
+    <p>
+        Previously we used one global store for storing intermediate results. This does not scale if we have multiple functions for which we want to memoize results. If we want to use memoization more generally, then we need to create a store for each function!
+    </p>
+
+    <p>
+        Your task is to write a function <code>memo : (('a -> 'b) -> 'a -> 'b) -> stats -> 'a -> 'b</code>. The function <code>memo</code> takes as input a function <code>f</code> (i.e. the function we want to memoize), a record of type <code>stats</code> to keep track of how often we access the local store and how many entries we add, and returns a function of type <code>'a -> 'b</code>. When this function is called with an input of type <code>'a</code>, it will run <code>f</code>, memoize intermediate results, and return as a final result a value of type <code>'b</code>. It will also update the values in its <code>stats</code> record accordingly.
+        For example, to create a memoizing function that sums up numbers up to x, we have <code>memo (fun g x -> if x=0 then 0 else x + g(x-1)) stats</code>
+    </p>
+
+    <p>The record type <code>stats</code> has two fields:</p>
+
+    <ul>
+      <li><code>entries</code>: the number of results that have been memoized</li>
+      <li><code>lkp</code>: the number of times a memoized result has been found in the store instead of executing the function</li>
+    </ul>
+
+    <p>These fields should continue to be updated across multiple function calls, i.e. you should not reset them between function calls.</p>
+
+    <p>
+      Note the type of the given function <code>f</code>: it in itself requires another function as argument. Specifically, the function <code>g</code> passed to <code>f</code> will be the function that <code>f</code> will call in its recursive case.
+    </p>
+  </li>
+
+  <li>
+    <h3>Computing the Fibonaci number efficiently using memoization (13 points)</h3>
+
+<p>
+      Implement the function <code>fibM: int -> (int * stats)</code> that computes the `n`th Fibonacci number using memoization. It should use <code>memo</code> and return the computed result as well as the stats object used in the call to <code>memo</code>. Memoized results should persist across multiple calls to <code>fibM</code> as in the series of function calls below. <strong>In this exercise, you are allowed to change the signature of fibM if you think it's necessary. Make sure your implementation preserves the intended type, i.e. fibM must have the type <code>fibM: int -> (int * stats)</code> </strong>.
+    </p>
+  <p>
+  </p>
+
+  </li>
+</ol>
+</li>
+</ol>
+</section>
