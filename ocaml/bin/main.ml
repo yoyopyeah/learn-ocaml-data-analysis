@@ -1,16 +1,9 @@
-print_string "\n" ;;
+let file = "/Users/yoyooolo/Coding/COMP400/dune_project/ocaml/fall2021exercises/hw1/template.ml" ;;
 
-let _python_exec =
-  Sys.command("python3 bin/test.py")
+let test_str = 
+  Arg.read_arg file
+  |> Array.fold_left (fun acc s -> acc ^ s) ""
 ;;
-
-(* let _ex_dirpath = "/Users/yoyooolo/Coding/COMP400/dune_project/ocaml/fall2021exercises" *)
-
-(* let file = "/Users/yoyooolo/Coding/COMP400/dune_project/ocaml/fall2021exercises/hw1/template.ml" *)
-
-let test_str = "let distance (x1, y1) (x2, y2) =
-  let abs x = if x < 0 then -x else x in
-  abs (x2 - x1) + abs (y2 - y1)" ;;
 
 (* To quickly extract ASTs from a raw string: *)
 let _ast_from_str s = s |> Lexing.from_string |> Parse.implementation ;;
@@ -18,9 +11,15 @@ let _ast_from_str s = s |> Lexing.from_string |> Parse.implementation ;;
 let ast = _ast_from_str test_str ;;
 
 (* To print out an AST using a raw printer: *)
-print_string "=== raw ast ===" ;;
-Printast.implementation Format.std_formatter ast ;;
+(* Printast.implementation Format.std_formatter ast ;; *)
 
-print_endline "=== pretty ast ===" ;;
+(* Write AST to file *)
+let oc = open_out "ast_out" ;;
+Printast.implementation (Format.formatter_of_out_channel oc) ast ;;
+
 (* To convert an AST into a pretty string: *)
-print_string (Pprintast.string_of_structure ast) ;;
+let pretty_str = Pprintast.string_of_structure ast ;;
+(* print_string (pretty_str) ;; *)
+let pretty_ast = Array.of_list (String.split_on_char '\n' pretty_str) ;;
+
+Arg.write_arg "pretty_ast_out" pretty_ast ;;
