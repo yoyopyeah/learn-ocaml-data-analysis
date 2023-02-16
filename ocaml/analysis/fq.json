@@ -1,0 +1,39 @@
+{
+  "hw1": {
+    "q1" : ["fact_tests", "fact", "binomial_tests", "binomial", "ackerman_tests", "ackerman"],
+    "q2" : ["is_prime_tests", "is_prime"],
+    "q3" : ["square_root_tests", "square_root"],
+    "q4" : ["fib_tl_tests", "fib_aux", "fib_tl"]
+  },
+  "hw2": { 
+    "q1" : ["compress_tests", "compress", "decompress_tests", "decompress"],
+    "q2" : ["eval_tests", "eval", "to_instr_tests", "to_instr", "instr_tests", "instr", "prog_tests", "prog"]
+  },
+  "hw3": {
+    "q1": ["tabulate_tests", "dist_table", "is_empty_tests", "is_empty", "dist_matrix", "combined_dist_table", "max_likelihood"],
+    "q2": ["all", "is_chocolate_cake_tests", "is_chocolate_cake", "map", "add_ingredient_tests", "add_ingredient", "fold_cake", "get_all_ingredients"]
+  },
+  "hw4": {
+    "q1": ["new_account"],
+    "q2_1": ["fib_I"],
+    "q2_2": ["fib_memo"],
+    "q2_3": ["memo"],
+    "q2_4": ["fibM"]
+  },
+  "hw5": {
+    "q1_1": ["neighbours_tests", "neighbours"],
+    "q1_2": ["find_path"],
+    "q1_3": ["find_path'"],
+    "q1_4": ["find_all_paths"],
+    "q1_5": ["find_shortest_path"],
+    "q2_1": ["merge"],
+    "q2_2": ["hamming_series"]
+  },
+  "hw6": {
+    "q1": ["unused_vars_tests", "unused_vars"],
+    "q2": ["subst_tests", "subst", "rename", "rename_all"],
+    "q3": ["subst_list", "eval_tests", "eval"],
+    "q4": ["infer_tests", "infer"],
+    "q5": ["check", "unify", "unifyVar"]
+  }
+}
