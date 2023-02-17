@@ -5,7 +5,7 @@
 1. Extract the functions for each question from `template.ml` and `solution.ml` in each homework.
    - Uses ocaml `compiler-lib` library to generate AST to facilitate extraction of functions on per question basis.
 2. Extract student submission of functions for each question, as well as any dependent functions.
-3. Run ocaml grader on per question basis.
+3. Run ocaml grader on per question basis. The command follows the pattern `learn-ocaml grade --exercises="./exercises/hw1/question1/exercise" --grade-student="./exercises/hw1/question1/student_submissions/stu.ml" --timeout=60 --dump-reports grade_report`. The exercises and student submissions can be stored anywhere on the file system provided the correct path is passed to the `--exercises` and `--grade-student` flags.
 
 ## Scripts
 `main.ml`
