@@ -88,5 +88,7 @@ The resulting files generated will be produced under directory `/analysis/out/`.
 ### Data analysis
 - how many type errors & how many syntax errors
 - how long students worked on a particular problem
+   - Number of submission
+   - time
 - grade progression per question
   - once type checked how quickly a student gets 100
