@@ -91,7 +91,7 @@ def get_db():
     to_port=27017,
     to_host='127.0.0.1'
   )
-  return session.connection["2021fallcode"]
+  return session.connection["sanitized-anon"]
 
 
 ########## main ##########
@@ -105,29 +105,33 @@ def main():
   for hw in fq:
     # copy exercise files
     os.system(f"cp -a fall2021exercises/{hw}/. analysis/out/{hw}/exercise")
-    hw_submission_count = 0
+    hw_all_submission_count = 0
 
-    print("\n=== starting process of "  + hw + " ===\n")
+    print("\n=== starting process of "  + hw + " ===")
     for collection in collections:
-      if hw not in collection:
+      hw_collection_submission_count = 0
+      if hw.upper() not in collection:
         # print("-- >> skip collection " + collection)
         continue
-      print("-- >> processing collection " + collection)
+      print("\n>>> processing collection " + collection)
       records = db[collection].find({}, batch_size=15)
       for record in records:
-        if hw_submission_count >= 5: break
+        if not record['consent']: continue
+
+        if hw_collection_submission_count >= 5: break # TODO: limit on 10 per hw
+        hw_all_submission_count += 1
+        hw_collection_submission_count += 1
+
         studentId = record['studentId']
-        if studentId not in consent_students: continue
-        hw_submission_count += 1
+        
         # print(studentId + " " + record['timestamp'])
         if not os.path.isfile(f"analysis/out/{hw}/stats/{studentId}.json"):
           with open(f"analysis/out/{hw}/stats/{studentId}.json", "w") as jsonFile:
-            print(f"created stats/{studentId}.json")
             data = {"syntax_err_count": 0}
             json.dump(data, jsonFile)
         with open(f"analysis/submission_temp", "w") as f:
           f.write(record["solution"])
-        split_submission_by_question(hw, f"analysis/submission_temp", studentId, record['timestamp'])
+        split_submission_by_question(hw, f"analysis/submission_temp", studentId, record['readableTimestamp'])
 
 
 if __name__ == "__main__":
