@@ -1,5 +1,5 @@
 ### Goal
-- Grade homwwork on per question basis, and analyze the grade progression per question to explore the relation of program correctness and type-check status.
+- Grade homework on per question basis, and analyze the grade progression per question to explore the relation of program correctness and type-check status.
 
 ### Approach
 1. For each homework, extract the functions on per question basis for each student submission.
