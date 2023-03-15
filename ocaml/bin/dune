@@ -3,3 +3,9 @@
  (name main)
  (libraries ocaml compiler-libs compiler-libs.toplevel Str yojson)
  )
+
+(library
+ (name dep)
+ (wrapped false)
+ (modules Dep)
+ (libraries compiler-libs compiler-libs.toplevel))
