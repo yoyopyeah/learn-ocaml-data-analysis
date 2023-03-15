@@ -2,90 +2,87 @@
 - Grade homwwork on per question basis, and analyze the grade progression per question to explore the relation of program correctness and type-check status.
 
 ### Approach
-1. Extract the functions for each question from `template.ml` and `solution.ml` in each homework.
+1. For each homework, extract the functions on per question basis for each student submission.
    - Uses ocaml `compiler-lib` library to generate AST to facilitate extraction of functions on per question basis.
-2. Extract student submission of functions for each question, as well as any dependent functions.
-3. Run ocaml grader on per question basis. The command follows the pattern `learn-ocaml grade --exercises="./exercises/hw1/question1/exercise" --grade-student="./exercises/hw1/question1/student_submissions/stu.ml" --timeout=60 --dump-reports grade_report`. The exercises and student submissions can be stored anywhere on the file system provided the correct path is passed to the `--exercises` and `--grade-student` flags.
-
-## Scripts
-`main.ml`
-- Process given .ml files into `ast_out` and `pretty_ast_out` in analysis/out/.
-
-`question_split.py`
-- Extracts functions by question.
-
+   - Extraction includes dependent functions.
+   - Python script `bin/question_split.py` facilitates connection to ssh remote database, structure outputs, and navigate data processing traffics between Python script and Ocaml script (`bin/main.ml`)
+      - See output project structure in [section](#project-structure) below.
+2. Run ocaml grader on per question basis. The command follows the pattern `learn-ocaml grade --exercises="./exercises/hw1/question1/exercise" --grade-student="./exercises/hw1/question1/student_submissions/stu.ml" --timeout=60 --dump-reports grade_report`. The exercises and student submissions can be stored anywhere on the file system provided the correct path is passed to the `--exercises` and `--grade-student` flags.
 
 ## Usage
-This is a dune project. Build the project in the project_name/ directory, in this case, `ocaml/`, and run:
+Python script calls for the execution of the dune project. Before running, set up the environment:
 ```
 eval $(opam env)
-dune build
 ```
-Execute the project
+To execute the project, in dune project `ocaml/`, run:
 ```
-dune exec ocaml arg1
+python3 bin/question_split.py
 ```
-where `arg1` is the hw/file path of the file to process. For example, `dune exec ocaml "hw2/solution.ml"`.
-
 The resulting files generated will be produced under directory `/analysis/out/`.
 
+
 ## Project structure
+`bin/`
+
+Where the main scripts are located.
+
+- `question_split.py`
+  - Extracts functions by question.
+  - Setup the structure of and organize outputs under `analysis/output/`.
+
+- `main.ml`
+  - Process given Ocaml files into `ast_out` and `pretty_ast_out` in analysis/out/.
+
+`analysis/`
+
+Where analysis related data and output are located.
+- `info/` (_*Do not edit_)
+   - `consentID2021fall.csv`: Student IDs of those that approved the usage of their homework data.
+   - `fq.json`: List of function names for related to each question in each homework.
+- `out/`
+
+   Where the generated output files are located.
+
+   See full structure below:
 ```
-├── hw1
-│   ├── description.html
-│   ├── meta.json
-│   ├── prelude.ml
-│   ├── prepare.ml
-│   ├── solution.ml
-│   ├── template.ml
-│   ├── test.ml
-│   ├── sol1.ml (solution for q1)
-│   ├── sol2.ml (solution for q2)
-│   ├── sol3.ml ...
-│   ├── student_submissions (only contains q1)
-│       ├── 260950000.ml
-│       ├── ...
-├── hw2
-│   ├── question 1
-│   │   ├── exercise
-│   │   │   ├── ...
-│   │   ├── student_submissions (only contains q1)
-│   │       ├── 260950000.ml
-            ├── ...
-```
-```
-├── hw1
-│   ├── question 1
-│   │   ├── exercise
-│   │   │   ├── description.html
-│   │   │   ├── meta.json
-│   │   │   ├── prelude.ml
-│   │   │   ├── prepare.ml
-│   │   │   ├── solution.ml (extracted by question)
-│   │   │   ├── template.ml
-│   │   │   ├── test.ml
-│   │   ├── student_submissions (only contains q1)
+├── hw1/
+│   ├── stats/
+│   │   ├── 260950000.json
+│   │   ├── ... 
+│   ├── exercise/
+│   │   ├── description.html
+│   │   ├── meta.json
+│   │   ├── prelude.ml
+│   │   ├── prepare.ml
+│   │   ├── solution.ml
+│   │   ├── template.ml
+│   │   ├── test.ml
+│   ├── q1/
+│   │   ├── student_submissions/ (only contains q1)
+│   │       ├── 260950000/
+│   │          ├── Sep_08_2021_03:12:55.ml
+│   │       ├── 260950001/
+│   │       ├── ...
+│   ├── q2/
+│   │   ├── student_submissions/ (only contains q2)
 │   │       ├── 260950000.ml
 │   │       ├── ...
-│   ├── question 2
-│   │   ├── exercise
-│   │   │   ├── ...
-│   │   ├── student_submissions (only contains q2)
-│   │       ├── 260950000.ml
-│   │       ├── ...
-│   ├── question 3
+│   ├── q3/
 │       ├── ...
-├── hw2
-│   ├── question 1
+├── hw2/
+│   ├── q1
 │   │   ├── exercise
 │   │   │   ├── ...
-│   │   ├── student_submissions (only contains q1)
+│   │   ├── student_submissions/ (only contains q1)
 │   │       ├── 260950000.ml
             ├── ...
 ```
 
+`stats/`:
+- contains json for each student of their submission statistics, including syntax error counts (AST can't be generated)
 
-### Data analysis
+
+## Data analysis
 - how many type errors & how many syntax errors
 - how long students worked on a particular problem
    - Number of submission
