@@ -69,9 +69,39 @@ let rec all_deps_2 fun_name (fun_deps: ((string * Parsetree.structure_item list)
     n_s @ List.flatten (List.map (fun x -> all_deps_2 x fun_deps
                                  ) n_s);;
 
-if Dep.called_in "foo" last then Printf.printf "foo is used";;
+(*    List.map
+      (fun other_fun ->
+         all_deps_2 (Dep.extract_vname_from_value_binding other_fun)
+                     fun_deps
+                     (n_s @ ds)) 
+         n_s*)
+(* let indir_deps (a_fun: string) (dir_deps: (string * Parsetree.structure_item) list) = *)
+(*   List.filter (fun x -> match List.assoc_opt a_fun ) dir_deps;; *)
 
-let fun_deps = List.combine function_names fun_direct_deps;;
+(* let fun_all_deps = List.map (fun a -> *)
+
+(* let rec all_deps x node sast = *)
+(*   if Dep.cg_depends x node *)
+(*   then node :: (all_deps node sast) *)
+(*   else []) *)
+
+(*   List.map *)
+(*     (fun x -> *)
+(*        if Dep.cg_depends last x *)
+(*        then x *)
+(*        else _) *)
+(*     ast;; *)
+
+(* if Dep.called_in "foo" last then Printf.printf "foo is used";; *)
+
+(* let fun_deps = List.combine function_names fun_direct_deps;; *)
+
+(* let fun_1_deps = List.assoc (List.hd (List.rev function_names)) fun_deps;; *)
+
+(* let fun_1_all_deps = all_deps_2 (List.hd (List.rev function_names)) fun_deps;; *)
+
+(* let all_fun_deps = List.map (fun f -> let deps = all_deps_2 f fun_deps in if List.length deps < 1 then [] else deps *)
+(* ) function_names;; *)
 
 
 (* let build_json_structure = *)

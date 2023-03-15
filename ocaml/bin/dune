@@ -1,7 +1,12 @@
 (executable
- (public_name ocaml)
- (name main)
- (libraries ocaml compiler-libs compiler-libs.toplevel Str yojson)
+ (public_name call_dep)
+ (name dep_test)
+ (modes byte)
+ (ocamlc_flags :standard -custom)
+ (flags :standard -g -linkall -warn-error A-26-27)
+ (modules Dep_test)
+ (libraries compiler-libs compiler-libs.toplevel dep cmdliner yojson)
+ ;(libraries parse_tree) 
  )
 
 (library
