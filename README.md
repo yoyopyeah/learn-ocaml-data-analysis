@@ -1,7 +1,7 @@
-### Goal
+## Goal
 - Grade homework on per question basis, and analyze the grade progression per question to explore the relation of program correctness and type-check status.
 
-### Approach
+## Approach
 1. For each homework, extract the functions on per question basis for each student submission.
    - Uses ocaml `compiler-lib` library to generate AST to facilitate extraction of functions on per question basis.
    - Extraction includes dependent functions.
@@ -18,7 +18,7 @@ To execute the project, in dune project `ocaml/`, run:
 ```
 python3 bin/question_split.py
 ```
-The resulting files generated will be produced under directory `/analysis/out/`.
+The resulting files generated will be produced under directory `/analysis/out/`. See project structure below.
 
 
 ## Project structure
