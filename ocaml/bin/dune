@@ -1,5 +1,5 @@
 (executable
  (public_name ocaml)
  (name main)
- (libraries ocaml compiler-libs compiler-libs.toplevel Str)
+ (libraries ocaml compiler-libs compiler-libs.toplevel Str yojson)
  )
