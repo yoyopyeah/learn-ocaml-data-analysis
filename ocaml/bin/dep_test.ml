@@ -99,6 +99,8 @@ let rec all_deps_2 fun_name (fun_deps: ((string * Parsetree.structure_item list)
 (* let fun_1_deps = List.assoc (List.hd (List.rev function_names)) fun_deps;; *)
 
 (* let fun_1_all_deps = all_deps_2 (List.hd (List.rev function_names)) fun_deps;; *)
+(* let build_json_structure = *)
+(*   List.map (fun f_name fdeps -> `Assoc [(f_name, `List ((fun dep -> `String dep) fdeps))]);; *)
 
 (* let all_fun_deps = List.map (fun f -> let deps = all_deps_2 f fun_deps in if List.length deps < 1 then [] else deps *)
 (* ) function_names;; *)
