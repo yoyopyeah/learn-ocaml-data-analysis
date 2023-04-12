@@ -26,19 +26,19 @@ def extract_function_name(fun, verbose=False):
   return fun_name
 
 def split_submission_by_question(hw, submission, studentId, timestamp):
-  # try:
-  #     result = subprocess.run([f"dune exec ocaml \"{submission}\""], stdout=subprocess.PIPE)
-  #     print(result.stdout)
-  # except subprocess.CalledProcessError as e:
-  #     print(e.output)
-  
-  exitcode = os.system(f"dune exec ocaml \"{submission}\"")
-  # TODO: assuming any exitcode != 0 is syntax error
-  if exitcode != 0:
-    with open(f"analysis/out/{hw}/stats/{studentId}.json", "r") as jsonFile:
-      data = json.load(jsonFile)
-      data["syntax_err_count"] += 1
-    with open(f"analysis/out/{hw}/stats/{studentId}.json", "w") as jsonFile:
+  dune_cmd = f"dune exec ocaml \"{submission}\""                
+  process = subprocess.run(dune_cmd, shell=True, timeout=30, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  if (process.stderr):
+    f = open(f"analysis/out/{hw}/err.json", "r")
+    data = json.load(f)
+    if "Lexer.Error" in process.stderr:
+      data[studentId]["lexer_errors"].append(timestamp)
+    elif "Syntaxerr" in process.stderr:
+      data[studentId]["syntax_errors"].append(timestamp)
+    else :
+      data[studentId]["other_err"].append(process.stderr)
+    f.close()
+    with open(f"analysis/out/{hw}/err.json", "w") as jsonFile:
       json.dump(data, jsonFile)
     return
 
@@ -48,9 +48,11 @@ def split_submission_by_question(hw, submission, studentId, timestamp):
 
   out_name = '_'.join(timestamp.split(" ")[1:5])
 
+  # make a copy of fq.json, and add the dependent function names into json
+  # then read that udpated json
+  # and do the for loop with q in updated_fq[hw]
+  
   for q in fq[hw]:
-    if not os.path.exists(f"analysis/out/{hw}/{q}/student_submissions/{studentId}"):
-      os.makedirs(f"analysis/out/{hw}/{q}/student_submissions/{studentId}")
     out_f = open(f"analysis/out/{hw}/{q}/student_submissions/{studentId}/{out_name}.ml", "w")
     for fun in fun_list:
       fun_name = extract_function_name(fun)
@@ -65,17 +67,20 @@ def split_submission_by_question(hw, submission, studentId, timestamp):
 # Create directories, split exercises
 # See structure in README.md
 def setup_output_structure():
+  if os.path.exists(f"analysis/out"):
+    os.system("rm -rf analysis/out")
   os.system("mkdir -p analysis/out")
   for hw in fq:
     os.system("mkdir -p analysis/out/" + hw)
-    # wipe stats/ and recreate
-    os.system("rm -rf analysis/out/" + hw + "/stats")
-    os.system("mkdir -p analysis/out/" + hw + "/stats")
     os.system("mkdir -p analysis/out/" + hw + "/exercise")
-    
+    f = open(f"analysis/out/{hw}/err.json", "a")  
+    f.write("{}")
+    f.close()
     for q in fq[hw]:
       os.system("mkdir -p analysis/out/" + hw + "/" + q)
       os.system("mkdir -p analysis/out/" + hw + "/" + q + "/student_submissions")
+    
+    break #TODO: only do hw1 for now
 
 
 ########## bulk data processing ##########
@@ -102,7 +107,10 @@ def main():
   db = get_db()
   collections = db.list_collection_names()
 
+  # pickedId = "d54baff9c3e9e5467505601b4b370289" # TODO: pick one id to run everything
+
   for hw in fq:
+    # hw = "hw1" # TODO: only do hw1 for now
     # copy exercise files
     os.system(f"cp -a fall2021exercises/{hw}/. analysis/out/{hw}/exercise")
     hw_all_submission_count = 0
@@ -117,21 +125,39 @@ def main():
       records = db[collection].find({}, batch_size=15)
       for record in records:
         if not record['consent']: continue
+        # if pickedId != record['studentId']: continue #TODO: pick one id to run everything
 
-        if hw_collection_submission_count >= 5: break # TODO: limit on 10 per hw
         hw_all_submission_count += 1
         hw_collection_submission_count += 1
 
         studentId = record['studentId']
         
-        # print(studentId + " " + record['timestamp'])
-        if not os.path.isfile(f"analysis/out/{hw}/stats/{studentId}.json"):
-          with open(f"analysis/out/{hw}/stats/{studentId}.json", "w") as jsonFile:
-            data = {"syntax_err_count": 0}
-            json.dump(data, jsonFile)
+        # create studentId entry in err.json file
+        with open(f"analysis/out/{hw}/err.json", "r") as f:
+          data = json.load(f)
+          if (studentId not in data):
+            newStudent = {studentId: {
+              "syntax_errors": [],
+              "lexer_errors": [],
+              "other_err": []
+            }}
+            data.update(newStudent)
+        with open(f"analysis/out/{hw}/err.json", "w") as f:
+          json.dump(data, f, indent=2)
+
         with open(f"analysis/submission_temp", "w") as f:
           f.write(record["solution"])
+        for q in fq[hw]:
+          if not os.path.exists(f"analysis/out/{hw}/{q}/student_submissions/{studentId}"):
+            os.makedirs(f"analysis/out/{hw}/{q}/student_submissions/{studentId}")
+        
         split_submission_by_question(hw, f"analysis/submission_temp", studentId, record['readableTimestamp'])
+    # break
+
+  # Clean up
+  os.system("rm analysis/submission_temp")
+  os.system("rm analysis/pretty_ast_out")
+  os.system("rm analysis/ast_out")
 
 
 if __name__ == "__main__":

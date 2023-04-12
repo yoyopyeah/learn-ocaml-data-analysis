@@ -43,12 +43,10 @@ Where analysis related data and output are located.
 
    Where the generated output files are located.
 
-   See full structure below:
+   See full structure below   :
 ```
 ├── hw1/
-│   ├── stats/
-│   │   ├── 260950000.json
-│   │   ├── ... 
+│   ├── err.json 
 │   ├── exercise/
 │   │   ├── description.html
 │   │   ├── meta.json
@@ -59,13 +57,13 @@ Where analysis related data and output are located.
 │   │   ├── test.ml
 │   ├── q1/
 │   │   ├── student_submissions/ (only contains q1)
-│   │       ├── 260950000/
+│   │       ├── d54baff9c3e9e5467505601b4b370289/
 │   │          ├── Sep_08_2021_03:12:55.ml
-│   │       ├── 260950001/
+│   │       ├── xxxxx/
 │   │       ├── ...
 │   ├── q2/
 │   │   ├── student_submissions/ (only contains q2)
-│   │       ├── 260950000.ml
+│   │       ├── xxxxx.ml
 │   │       ├── ...
 │   ├── q3/
 │       ├── ...
@@ -74,12 +72,12 @@ Where analysis related data and output are located.
 │   │   ├── exercise
 │   │   │   ├── ...
 │   │   ├── student_submissions/ (only contains q1)
-│   │       ├── 260950000.ml
+│   │       ├── xxxxx.ml
             ├── ...
 ```
 
-`stats/`:
-- contains json for each student of their submission statistics, including syntax error counts (AST can't be generated)
+`err.json`:
+- logs errors occured during AST generation and function parsing
 
 
 ## Data analysis
