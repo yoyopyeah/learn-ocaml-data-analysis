@@ -107,9 +107,6 @@ def get_db():
 
 ########## main ##########
 def main():
-  # TODO: only do up to 5 ids
-  ids = set()
-
   # set ups
   os.system("dune clean && dune build")
   setup_output_structure()
@@ -117,25 +114,18 @@ def main():
   collections = db.list_collection_names()
 
   for collection in collections:
-    # if "HW1" not in collection: continue #TODO: only process HW1
     print("\n>>> processing collection " + collection)
+    clean_collection_name = collection.split("_")[0]
 
-    hw = collection.split("_")[0][-3:].lower()
-    hw_collection_submission_count = 0
+    hw = clean_collection_name[-3:].lower()
+    collection_submission_count = 0
     make_hw_outdir(hw)
 
     records = db[collection].find({}, batch_size=15)
     for record in records:
       if not record['consent']: continue
-
-      hw_collection_submission_count += 1
-
+      collection_submission_count += 1
       studentId = record['studentId']
-      # if len(ids) < 5: #TODO: only do up to 5 ids
-      #   ids.add(studentId)
-      # else:
-      #   if (studentId not in ids):
-      #     continue
       
       # create studentId entry in err.json file
       with open(f"analysis/out/{hw}/err.json", "r") as f:
@@ -158,8 +148,8 @@ def main():
       
       split_submission_by_question(hw, f"analysis/submission_temp", studentId, record['readableTimestamp'])
     
-    print(f">>> processed {hw_collection_submission_count} submissions in {collection} for {hw}\n")
-    output_filename = collection.split("_")[0] + "_question_based"
+    print(f">>> processed {collection_submission_count} submissions in {collection}\n")
+    output_filename = clean_collection_name + "_question_based"
     shutil.make_archive(output_filename, 'zip', f"analysis/out/{hw}")
     os.system(f"mv {output_filename}.zip analysis/zips")
 
