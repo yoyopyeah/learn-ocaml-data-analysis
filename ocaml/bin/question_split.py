@@ -8,6 +8,7 @@ import sys
 import pymongo
 import os
 import subprocess
+import shutil
 
 # global variables
 fq = json.load(open("analysis/info/fq.json", "r"))
@@ -64,23 +65,30 @@ def split_submission_by_question(hw, submission, studentId, timestamp):
 
 
 ########## set up output structure ##########
-# Create directories, split exercises
 # See structure in README.md
 def setup_output_structure():
+  # remove old outputs directories
   if os.path.exists(f"analysis/out"):
     os.system("rm -rf analysis/out")
+  if os.path.exists("analysis/zips"):
+    os.system("rm -rf analysis/zips")
+
+  # make new outputs directories
   os.system("mkdir -p analysis/out")
-  for hw in fq:
-    os.system("mkdir -p analysis/out/" + hw)
-    os.system("mkdir -p analysis/out/" + hw + "/exercise")
-    f = open(f"analysis/out/{hw}/err.json", "a")  
-    f.write("{}")
-    f.close()
-    for q in fq[hw]:
-      os.system("mkdir -p analysis/out/" + hw + "/" + q)
-      os.system("mkdir -p analysis/out/" + hw + "/" + q + "/student_submissions")
-    
-    break #TODO: only do hw1 for now
+  os.system("mkdir -p analysis/zips")
+
+
+########## create output structure for given hw ##########
+def make_hw_outdir(hw):
+  os.system("mkdir -p analysis/out/" + hw)
+  os.system("mkdir -p analysis/out/" + hw + "/exercise")
+  f = open(f"analysis/out/{hw}/err.json", "a")  
+  f.write("{}")
+  f.close()
+  for q in fq[hw]:
+    os.system("mkdir -p analysis/out/" + hw + "/" + q)
+    os.system("mkdir -p analysis/out/" + hw + "/" + q + "/student_submissions")
+  os.system(f"cp -a fall2021exercises/{hw}/. analysis/out/{hw}/exercise")
 
 
 ########## bulk data processing ##########
@@ -101,63 +109,70 @@ def get_db():
 
 ########## main ##########
 def main():
+  # TODO: only do up to 5 ids
+  ids = set()
+
   # set ups
   os.system("dune clean && dune build")
   setup_output_structure()
   db = get_db()
   collections = db.list_collection_names()
 
-  # pickedId = "d54baff9c3e9e5467505601b4b370289" # TODO: pick one id to run everything
+  for collection in collections:
+    if "HW1" not in collection: continue #TODO: only process HW1
+    print("\n>>> processing collection " + collection)
 
-  for hw in fq:
-    # hw = "hw1" # TODO: only do hw1 for now
-    # copy exercise files
-    os.system(f"cp -a fall2021exercises/{hw}/. analysis/out/{hw}/exercise")
-    hw_all_submission_count = 0
+    hw = collection.split("_")[0][-3:].lower()
+    hw_collection_submission_count = 0
+    make_hw_outdir(hw)
 
-    print("\n=== starting process of "  + hw + " ===")
-    for collection in collections:
-      hw_collection_submission_count = 0
-      if hw.upper() not in collection:
-        # print("-- >> skip collection " + collection)
-        continue
-      print("\n>>> processing collection " + collection)
-      records = db[collection].find({}, batch_size=15)
-      for record in records:
-        if not record['consent']: continue
-        # if pickedId != record['studentId']: continue #TODO: pick one id to run everything
+    records = db[collection].find({}, batch_size=15)
+    for record in records:
+      if not record['consent']: continue
 
-        hw_all_submission_count += 1
-        hw_collection_submission_count += 1
+      hw_collection_submission_count += 1
 
-        studentId = record['studentId']
-        
-        # create studentId entry in err.json file
-        with open(f"analysis/out/{hw}/err.json", "r") as f:
-          data = json.load(f)
-          if (studentId not in data):
-            newStudent = {studentId: {
-              "syntax_errors": [],
-              "lexer_errors": [],
-              "other_err": []
-            }}
-            data.update(newStudent)
-        with open(f"analysis/out/{hw}/err.json", "w") as f:
-          json.dump(data, f, indent=2)
+      studentId = record['studentId']
+      # if len(ids) < 5: #TODO: only do up to 5 ids
+      #   ids.add(studentId)
+      # else:
+      #   if (studentId not in ids):
+      #     continue
+      
+      # create studentId entry in err.json file
+      with open(f"analysis/out/{hw}/err.json", "r") as f:
+        data = json.load(f)
+        if (studentId not in data):
+          newStudent = {studentId: {
+            "syntax_errors": [],
+            "lexer_errors": [],
+            "other_err": []
+          }}
+          data.update(newStudent)
+      with open(f"analysis/out/{hw}/err.json", "w") as f:
+        json.dump(data, f, indent=2)
 
-        with open(f"analysis/submission_temp", "w") as f:
-          f.write(record["solution"])
-        for q in fq[hw]:
-          if not os.path.exists(f"analysis/out/{hw}/{q}/student_submissions/{studentId}"):
-            os.makedirs(f"analysis/out/{hw}/{q}/student_submissions/{studentId}")
-        
-        split_submission_by_question(hw, f"analysis/submission_temp", studentId, record['readableTimestamp'])
-    # break
+      with open(f"analysis/submission_temp", "w") as f:
+        f.write(record["solution"])
+      for q in fq[hw]:
+        if not os.path.exists(f"analysis/out/{hw}/{q}/student_submissions/{studentId}"):
+          os.makedirs(f"analysis/out/{hw}/{q}/student_submissions/{studentId}")
+      
+      split_submission_by_question(hw, f"analysis/submission_temp", studentId, record['readableTimestamp'])
+    
+    print(f">>> processed {hw_collection_submission_count} submissions in {collection} for {hw}\n")
+    output_filename = collection.split("_")[0] + "_question_based"
+    shutil.make_archive(output_filename, 'zip', f"analysis/out/{hw}")
+    os.system(f"mv {output_filename}.zip analysis/zips")
+
+    os.system("rm -r analysis/out/" + hw)
 
   # Clean up
+  # os.system("rm -rf analysis/out")
   os.system("rm analysis/submission_temp")
   os.system("rm analysis/pretty_ast_out")
   os.system("rm analysis/ast_out")
+  os.system("dune clean")
 
 
 if __name__ == "__main__":
