@@ -4,8 +4,6 @@
 
 import json
 import re
-import sys
-import pymongo
 import os
 import subprocess
 import shutil
@@ -119,7 +117,7 @@ def main():
   collections = db.list_collection_names()
 
   for collection in collections:
-    if "HW1" not in collection: continue #TODO: only process HW1
+    # if "HW1" not in collection: continue #TODO: only process HW1
     print("\n>>> processing collection " + collection)
 
     hw = collection.split("_")[0][-3:].lower()
