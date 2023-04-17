@@ -43,7 +43,8 @@ let rec used_in_exp (name : string) (e : Parsetree.expression) =
     let new_vnames = List.filter_map extract_vname_from_value_binding vbs in 
     if List.exists ((=) name) new_vnames then false
     (* otherwise dive into the body *)
-    else used_in_exp name e 
+    else
+      List.exists (fun ({pvb_expr = exp;_}: Parsetree.value_binding) -> used_in_exp name exp) vbs || used_in_exp name e 
   | {pexp_desc = Pexp_apply (e, args); _} ->
      List.exists (function (_, ae) -> used_in_exp name ae) args || used_in_exp name e
   | {pexp_desc = Pexp_fun (_, _, _, bodexp); _} ->
