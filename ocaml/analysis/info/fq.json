@@ -11,7 +11,12 @@
   },
   "hw3": {
     "q1": ["tabulate_tests", "dist_table", "is_empty_tests", "is_empty", "dist_matrix", "combined_dist_table", "max_likelihood"],
-    "q2": ["all", "is_chocolate_cake_tests", "is_chocolate_cake", "map", "add_ingredient_tests", "add_ingredient", "fold_cake", "get_all_ingredients"]
+    "q2_a": ["all"],
+    "q2_b": ["is_chocolate_cake_tests", "is_chocolate_cake"],
+    "q2_c": ["map"],
+    "q2_d": ["add_ingredient_tests", "add_ingredient"],
+    "q2_e": ["fold_cake"],
+    "q2_f": ["get_all_ingredients"]
   },
   "hw4": {
     "q1": ["new_account"],
