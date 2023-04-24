@@ -10,8 +10,6 @@ import shutil
 
 # global variables
 fq = json.load(open("analysis/info/fq.json", "r"))
-with open('analysis/info/consentID2021fall.txt', 'r') as file:
-  consent_students = [line.rstrip() for line in file]
 
 ########## extract question ##########
 def extract_function_name(fun, verbose=False):
@@ -22,7 +20,7 @@ def extract_function_name(fun, verbose=False):
   if verbose:
     print("=====" + fun_name + "=====")
     print(fun)
-  return fun_name
+  return fun_name.rstrip()
 
 def split_submission_by_question(hw, submission, studentId, timestamp):
   dune_cmd = f"dune exec ocaml \"{submission}\""                
@@ -38,8 +36,8 @@ def split_submission_by_question(hw, submission, studentId, timestamp):
       data[studentId]["other_err"].append(process.stderr)
     f.close()
     with open(f"analysis/out/{hw}/err.json", "w") as jsonFile:
-      json.dump(data, jsonFile)
-    return
+      json.dump(data, jsonFile, indent=2)
+    return False
 
   f = open("analysis/pretty_ast_out", "r")
   pretty_ast = f.read()
@@ -47,19 +45,33 @@ def split_submission_by_question(hw, submission, studentId, timestamp):
 
   out_name = '_'.join(timestamp.split(" ")[1:5])
 
-  # make a copy of fq.json, and add the dependent function names into json
-  # then read that udpated json
-  # and do the for loop with q in updated_fq[hw]
-  
-  for q in fq[hw]:
+  if os.path.exists(f"analysis/submission_temp_dep.json"):
+    with open(f"analysis/submission_temp_dep.json", "r") as jsonFile:
+      dep = json.load(jsonFile)
+  else: dep = {}
+
+  for q in fq[hw]: 
+    #add the dependent function names
+    question_fnames = fq[hw][q].copy()
+    for fname in question_fnames:
+      if fname not in dep: continue # has to check cuz 2021 and 2020 has different questions
+      for dep_fname in dep[fname]:
+        if dep_fname not in question_fnames:
+          question_fnames.append(dep_fname)
+    # print(f"** {fq[hw][q]} + {dep.get(fname)} = {question_fnames}")
+
     out_f = open(f"analysis/out/{hw}/{q}/student_submissions/{studentId}/{out_name}.ml", "w")
+
     for fun in fun_list:
       fun_name = extract_function_name(fun)
-      if fun_name in fq[hw][q]:
+      if fun_name in question_fnames:
         out_f.write(fun)
     out_f.close()  
   
   f.close()
+  if os.path.exists(f"analysis/submission_temp_dep.json"):
+    os.remove('analysis/submission_temp_dep.json')
+  return True
 
 
 ########## set up output structure ##########
@@ -114,6 +126,9 @@ def main():
   collections = db.list_collection_names()
 
   for collection in collections:
+    count = 0
+    if "HW5" not in collection: continue #TODO: only process HW5 for now
+    # if "grade" not in collection: continue #TODO: only process gradeHW5
     print("\n>>> processing collection " + collection)
     clean_collection_name = collection.split("_")[0]
 
@@ -123,7 +138,9 @@ def main():
 
     records = db[collection].find({}, batch_size=15)
     for record in records:
+      # if count == 15: break #TODO: limit num of records to process
       if not record['consent']: continue
+
       collection_submission_count += 1
       studentId = record['studentId']
       
@@ -146,17 +163,17 @@ def main():
         if not os.path.exists(f"analysis/out/{hw}/{q}/student_submissions/{studentId}"):
           os.makedirs(f"analysis/out/{hw}/{q}/student_submissions/{studentId}")
       
-      split_submission_by_question(hw, f"analysis/submission_temp", studentId, record['readableTimestamp'])
+      if split_submission_by_question(hw, "analysis/submission_temp", studentId, record['readableTimestamp']): count += 1
+      print(".", end="", flush=True)
     
     print(f">>> processed {collection_submission_count} submissions in {collection}\n")
     output_filename = clean_collection_name + "_question_based"
     shutil.make_archive(output_filename, 'zip', f"analysis/out/{hw}")
     os.system(f"mv {output_filename}.zip analysis/zips")
-
     os.system("rm -r analysis/out/" + hw)
 
   # Clean up
-  # os.system("rm -rf analysis/out")
+  os.system("rm -rf analysis/out")
   os.system("rm analysis/submission_temp")
   os.system("rm analysis/pretty_ast_out")
   os.system("rm analysis/ast_out")

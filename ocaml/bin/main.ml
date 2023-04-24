@@ -95,7 +95,7 @@ let work source_file =
   let fun_deps = List.combine t_func_names fun_direct_deps in
   let all_fun_deps = List.map (fun f -> let deps = all_deps_2 f fun_deps in if List.length deps < 1 then [] else deps) t_func_names in
   let json_deps = build_json t_func_names all_fun_deps in
-  let json_out = List.hd (String.split_on_char '.' source_file) ^ ".json" in
+  let json_out = List.hd (String.split_on_char '.' source_file) ^ "_dep.json" in
   let oc = open_out "analysis/ast_out" in
   let pretty_str = Pprintast.string_of_structure ast in
   let pretty_ast =
@@ -104,11 +104,12 @@ let work source_file =
     Array.map (fun s ->
       if (Str.string_match (Str.regexp {|^let|}) s 0)
       then "(**)\n" ^ s else s) arr in
-
   begin
     Printast.implementation (Format.formatter_of_out_channel oc) ast;
     Arg.write_arg "analysis/pretty_ast_out" pretty_ast;
     Yojson.to_file json_out json_deps;
   end;;
   
+print_endline Sys.argv.(1);
+
 work Sys.argv.(1);
