@@ -1,0 +1,139 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["asciimath2jax.js"],
+  })
+</script>
+
+<section id="intro">
+  <h2>Introduction</h2>
+  <p>
+    Welcome to the Learn-OCaml automated grading platform! Your homeworks will be supplied on this website for the duration of this course.
+  </p>
+  <p>
+    The questions you will be given in the assignments will generally consist of two parts: writing tests and writing code.
+    For each problem to solve, you will first be asked to write up tests, written as a list of <code>(input, output)</code> pairs.
+    That is, each element of the list has to be a pair, with the first element being a tuple of arguments for the function you want to test,
+    and the second element the answer you expect the function to return on those arguments. You can see some examples of this in the code we have provided for you.
+  </p>
+  <p>
+    It is important that you design these tests <strong>before</strong> writing your code:
+    the goal of these exercises is for you to think about the problem and design test cases that represent a sufficient range of possible inputs to thoroughly eliminate any bugs in your implementation. The grader will also tell you whether or not your test cases are correct, so you can use this to make sure that you understand what kind of values your function should return. Until you have written a sufficient set of test cases, we will not show you our own test cases that we are running on your code.
+  </p>
+  <p>
+    We will evaluate the test cases you create by running the given inputs on slightly incorrect versions of the function in question:
+    we then expect that at least one of the <code>(input, output)</code> pairs you provide will not be matched by the buggy code. If the buggy version passes all of your tests (that is, given those inputs, the buggy version produces outputs identical to the ones given),
+    your test list will be deemed insufficient to expose the bug. This is known in the software development industry as mutation testing.
+  </p>
+  <p>
+    Following the writing of tests, you will need to implement the function or behaviour in question. This is very straightforward coding.
+    However, remember that you should not rely on your knowledge of other programming languages or paradigms, but instead use what you are taught in this course.
+    For example, you should never be solving the question in a different language and then translating it to OCaml, and you should not be using
+    programming constructs that have not been discussed in class.
+  </p>
+  <p>
+    The Learn-OCaml platform provides you with the following tools to help you out:
+    <ul>
+      <li>The <strong>Compile</strong> button runs syntax- and type-checking. If this returns errors, most other functionalities will not work for you. Use the red highlights of the line numbers to see where your errors are.</li>
+      <li>The <strong>Grade</strong> button evaluates your code against our tests and solutions, and returns a grade. Remember to run this at least once to get a grade! The <strong>Report</strong> tab then explains where you received — or failed to receive — your points.</li>
+      <li>The <strong>Toplevel</strong> tab allows you to interact with OCaml, providing you with a read-eval-print loop (REPL) system. Entering an expression in the bottom text box and pressing Enter will evaluate it. You may do line breaks by pressing Ctrl-Enter (Cmd-Enter on a Mac).</li>
+      <li>The <strong>Eval code</strong> button loads your code into the Toplevel, without you copying and pasting it into the text box. Convenience!</li>
+    </ul>
+  </p>
+</section>
+
+<section id="q1">
+  <h2> Question 1 : Fix Me </h2>
+
+  <p>
+    Three functions have been implemented <i>incorrectly</i> in the provided template code:
+
+    <ul>
+      <li><code>fact: int -> float</code>: Given a number `n >= 0`, return `n!`, that is, `n * (n - 1) * (n - 2) * ... * 1`. The result should be returned as a floating-point number.</li>
+      
+      <li><code>binomial: int -> int -> float</code>: Given a number `n >= 0` and a number `n >= k >= 0`, the binomial coefficient, is defined as `(n!) / (k!(n-k)!)`. The result should be returned as a floating-point number.<li>
+      
+      <li><code>ackerman: int * int -> int</code>: Given a number `n >= 0` and `k > =0`, the Ackerman function can be defined as follows: <br>
+	A(0,k) = k + 1 <br>
+	A(n,0) = A(n-1, 1) for n >= 1 <br>
+	A(n,k) = A(n-1, A(n,k-1)) for n >= 1 and k >= 1 <br>
+	This definition of the Ackerman function is due to the mathematician Rózsa Péter given in her seminal work "Konstruktion nichtrekursiver Funktionen, Math. Annalen111 (1935), S. 42–60. "	
+    </ul>
+  </p>
+
+  <p>
+    First, write up some tests for these three functions. Write tests for the function <code>fact</code> in the list named <code>fact_tests</code>, the ones for <code>binomial</code> in <code>binomial_tests</code>, and the ones for <code>ackerman</code> in <code>ackerman_tests</code> respectively. Some example test cases are provided for the <code>fact</code> function, but they are incorrect; you should fix them.
+    <br />
+    <strong>Note</strong>: you should <em>only</em> write test cases for valid inputs, i.e. you should <em>not</em> write tests for negative numbers for this question.
+  </p>
+  <p>
+    Then, correct the various syntax, type and logical errors contained in both functions' implementations. Use the <b>Compile</b> button at the top-right to help yourself find syntax and type errors, then use the <b>Grade</b> button to analyze the logical errors.
+  </p>
+</section>
+
+<section id="q2">
+<h2> Question 2 : Prime Number </h2>
+  <p>
+    Implement the function <code>is_prime : int -> bool</code>. 
+  </p>
+
+  <p>
+  This can be done naively as follows: to test whether given <code>n</code> (where <code>n > 1</code>) is prime, we try to find a number that divides <code>n</code> by checking for each number <code>x</code> where <code>x * x <= n</code> whether it divides </code>n</code>. For inputs <code>n <= 1</code>, you should raise the exception <code>Domain</code>
+    A given integer `n` may have many factors or very few. Note that `1` and `n` are always factors of `n`. In some cases (if `n` is prime) these are the only factors.
+  </p>
+ 
+  <p>
+    As above, first write tests (for <code>n > 1</code>) in the corresponding list, then implement the function.
+  </p>
+</section>
+
+<section id="q3">
+  <h2>Question 3 : Finding the root of the problem</h2>
+  <p>
+    The Newton-Raphson method can be used to find the roots of a function; in particular, it
+can be used for computing the square root of a given integer. Given a good
+initial approximation, it converges rapidly and  is highly effective for
+computing square roots, solving the equation `a - x^2 = 0`.
+    </p>
+    <p>
+  To compute the square root of `a`, choose a positive number, for example `1.0`, as the first approximation. If `x` is the current approximation, then the next approximation `x'` is:
+    <p style="text-align:center">
+      `x' = (a/x + x) / 2`
+    </p>
+
+    Stop as soon as the difference between `x` and `x'` becomes too small.
+    </p>
+    <p>
+      Implement the function <code>findroot x acc</code> where <code>x</code> approximates the square root of <code>a</code> with accuracy <code>acc</code>. i.e. return <code>x'</code> when the absolute difference between <code>x</code> and <code>x'</code> is smaller than <code>acc</code>.
+    </p>
+
+    <p>
+      We use <code>epsilon_float</code> as the desired accuracy,
+      which in OCaml is the difference between <code>1.0</code> and the smallest exactly representable
+      floating-point number greater than  <code>1.0</code>.
+    </p>
+    <p>
+  Note that we made <code>findroot</code> a local function to be defined inside the
+  function <code>square_root</code>.
+    </p>
+   <p>
+  <strong>Remark</strong>: You can compute the absolute value of a floating point number
+in Ocaml with the library function <code>abs_float : float -> float</code>.
+   </p>
+
+<section id="q4">
+  <h2>Question 4 : Fibonacci Sequence</h2>
+
+    <p>
+      In this question we will implement the <code>fib</code> function tail recursively. Recall the Fibonacci sequence (indexed at 0):
+    </p>
+
+    <center>
+      <p>`1`, `1`, `2`, `3`, `5`, `8`, ..., `\text{fib}(n - 1) + \text{fib}(n - 2)`</p>
+    </center>
+
+    <ol>
+      <li>First write a good set of test cases for <code>fib_tl</code>. Remember that you should <em>only</em> write tests for cases where `n >= 0`.</li>
+
+      <li>Then, implement <code>fib_tl</code> by writing a tail-recursive helper function <code>fib_aux: int -> int -> int -> int</code>. Note that this helper function needs <em>two</em> accumulators.</li>
+    </ol>
+</section>

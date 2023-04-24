@@ -1,0 +1,13 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 0,
+  "title"              : "Homework 6",
+  "short_description"  : "Week 8",
+  "identifier"         : "hw6",
+  "authors"            : [["Brigitte Pientka", "bpientka@cs.mcgill.ca"]],
+  "focus"              : ["continuations", "lazy programming"],
+  "requirements"       : [],
+  "forward_exercises"  : [],
+  "backward_exercises" : []
+}

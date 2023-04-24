@@ -1,0 +1,2 @@
+(executable (name grade)
+ (flags :standard -w -a))

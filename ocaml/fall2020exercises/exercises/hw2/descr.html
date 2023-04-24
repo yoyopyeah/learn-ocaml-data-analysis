@@ -1,0 +1,239 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["asciimath2jax.js"],
+  })
+</script>
+
+<section id="intro">
+  <h2> Introduction </h2>
+  <p>
+    Congratulations! You made it to Week 2 of this course! Now that you know how to use OCaml, let's have a bit of fun using lists and user-defined datatypes.
+  </p>
+  <p>
+    Once again, for each question, you are required to write <strong>both a set of tests and the function code itself</strong>. Particularly, for any function <code>f</code> you are asked to implement, you must write a good list of tests in the variable <code>f_tests</code>. Each test is a pair of the form <code>(input, output)</code>. You can read last week's introduction if you are still unsure of why to do them or how. You can also check it out for a reminder of the Learn-OCaml tools at your disposal.
+  </p>
+  <p>
+    Note that any sample tests we provide will <em>not</em> be good enough to get you full marks should you decide to use them as your test cases.
+  </p>
+</section>
+
+<section id="q1">
+  <h2>Working with lists: DNA</h2>
+
+  <p>
+    DNA is the building block of
+  life. It is formed by finite sequences of nucleotides:
+  </p>
+
+  <p>
+    <li> <strong>C</strong>ytosine </li>
+    <li> <strong>G</strong>uanine</li>
+    <li> <strong>A</strong>denine</li>
+    <li> <strong>T</strong>hymine</li>
+  </p>  
+
+  <p> The sequences can get very long, and contain lots of redundant information.
+  </p>
+  <p>
+  In this question we will develop a data compressor to save some
+  space in very repetitive sequences.
+  So if we have a sequence like: </p>
+  </p>
+  <pre>
+AAAAGGATTTCTC
+  </pre>
+  <p>
+  The compression function will replace repeating nucleotides by a
+  pair of the number of times it appears and that particular
+  nucleotide. Such as the previous sequence results in:
+  </p>
+   <pre>
+[(4,A); (2, G); (1, A); (3, T); (1, C); (1, T); (1, C)]
+  </pre>
+  <p>
+    We represent nucleotides as a data type <code>nucleobase</code> (see <code>prelude</code>).
+  </p>
+  <p>
+  Write two functions to compress and decompress these DNA sequences
+  such as decompressing a compressed sequence produces the original
+  sequence. 
+  </p>
+  <p>
+    <li><code>compress: nucleobase list -> (int * nucleobase) list</code></li>
+    <li><code>decompress: (int * nucleobase) list -> nucleobase list</code></li>
+  </p>
+</section>
+
+<section id="q2">
+  <h2>User-defined datatypes: Pocket Calculator</h2>
+
+  <p>
+We consider here a simple pocket calculator for arithmetic expressions
+constructed from floating point numbers (<code>FLOAT</code>), addition
+(<code>PLUS</code>), subtraction (<code>MINUS</code>),multiplication
+(<code>MULT</code>), in addition to sinus (<code>SIN</code>, cosinus
+(<code>COS</code>), and exponential (<code>EXP</code>). We represent the
+arithmetic expressions using a recursive data type in OCaml as follows: 
+
+<pre>
+type exp = 
+  | PLUS  of exp * exp 
+  | MINUS of exp * exp
+  | MULT  of exp * exp 
+  | DIV   of exp * exp
+  | SIN   of exp     
+  | COS   of exp     
+  | EXP   of exp 
+  | FLOAT of float  
+</pre>
+  </p>
+
+  <p>
+We can then for example represent the arithmetic expression <i>(2.2 + 3.3) * 5.0</i>
+directly as <code>MULT (PLUS (FLOAT 2.2, FLOAT 3.3), FLOAT 5.0)</code>.
+This representation directly encodes the syntactic structure, i.e. the
+abstract syntax tree, of the arithmetic expression. This becomes
+particularly obvious when we write the expression as a tree where
+nodes correspond to a particular arithmetic operation.    
+  </p>
+<!-- LATEX REPRESENTATION OF THE AST -->  
+<!-- \begin{minipage}[b]{4cm} -->
+<!-- \Tree[.* [.+  2.2 3.3 ] -->
+<!--           5.0 ]   -->
+<!-- \end{minipage} -->
+<!-- is represented as  -->
+<!-- \begin{minipage}[b]{4cm} -->
+<!-- \Tree[.\lstinline!MULT! [.\lstinline!PLUS! [.\lstinline!FLOAT! 2.2 ] -->
+<!--                [.\lstinline!FLOAT! 3.3 ]] -->
+<!--           [.\lstinline!FLOAT! 5.0 ]]   -->
+<!-- \end{minipage}   -->
+
+
+  <ul>
+    <li> Implement the function  <code>eval: exp -> float</code> which takes an arithmetic expression of
+  type <code>exp</code> as input and returns its corresponding floating
+      point value.
+ <pre>
+# eval (MULT (PLUS (FLOAT 2.2, FLOAT 3.3), FLOAT 5.0));;
+- : float = 27.5	
+</pre>
+    </li>
+  </ul>
+
+<p>Note: sin, cos, and exp are built-in functions. Angles should be specified in radians.</p>
+
+<p>  
+    Next, we consider translating an expression into a series of
+instructions for an abstract machine of a simple pocket
+calculator. The calculator uses instructions for addition
+(<code>Plus</code>), subtraction (<code>Minus</code>), multiplication
+(<code>Mult</code>), and division (<code>Div</code>). In addition, it
+has instructions for computing the sinus (<code>Sin</code>), cosinus
+(<code>Cos</code>), and exponential (<code>Exp</code>). 
+
+The <i>instruction set</i> of the calculator is modelled using the
+      following datatype in OCaml.
+      <pre>
+type instruction = 
+  Plus | Minus | Mult | Div | Sin | Cos | Exp | Float of float	
+      </pre>
+
+The arithmetic expression <i>(2.2 + 3.3) * 5.0</i> can be also viewed as a list of
+      instructions:
+      <pre>
+[Float 2.2; Float 3.3; Plus; Float 5.0; Mult]	
+</pre>
+
+    <ul>  
+      <li>Implement a function= <code>to_instr:exp -> instruction list</code>
+ that takes as input an arithmetic expression and returns a list of instructions.
+
+	<p>
+<i>Hint:</i> An expression of type <code>exp</code> describes the
+abstract syntax tree of an arithmetic expression. Translating such an
+expression to a list of instructions amounts to traversing the tree
+and flattening it.
+
+<pre>
+# to_instr  (MULT (PLUS (FLOAT 2.2, FLOAT 3.3), FLOAT 5.0));;
+- : instruction list = [Float 2.2; Float 3.3; Plus; Float 5.; Mult]
+</pre>
+</p>
+      </li>
+  </ul>
+</p>      
+
+<p>
+We now want to implement a calculator by executing a list of
+instructions. The calculator is viewed as a <i>stack machine</i> where a <i>stack</i> is a
+list of floating point numbers and it is processed according to the
+instruction set.
+
+<pre>
+type stack = float list
+</pre>
+</p>
+<p>
+Intuitively, we store intermediate values on the stack. The
+instructions tell us what to do with these values.
+</p>
+<p> In the beginning the stack is empty. When we encounter a floating point number we simply push it
+onto a stack. This stack is different from the instr stack (in particular the order of how arguments are stored is reversed. See detailed examples below:</p>
+  <ol type="I">
+    <li> When we encounter the instruction <code>Plus</code> we
+      simply add the top two elements of the stack <code>[a;b;c ...]</code>
+      returning a new stack <code>[b + a; c ...]</code> where we
+      replace the top two elements with a single element describing their
+      sum. Similarly we proceed when we encounter other instructions such as
+      <code>Minus</code>, <code>Mult</code>, <code>Div</code> which all work
+      on the top two elements of the stack.
+    </li>
+    <li> When we encounter one of the instructions <code>Sin</code>,
+        <code>Cos</code>, <code>Exp</code> we apply the corresponding function
+        to the top element of the stack, i.e. for example given the
+        instruction <code>Sin</code> and the stack <code>[a; b; c ...]</code>
+        we return <code>[sin a; b; c ...]</code>.
+    </li>
+  </ol>
+
+<ul>
+<li>
+ Implement a function
+  <code>instr:instruction -> stack -> stack option</code> which takes
+  an instruction i and a stack s and returns a new stack according to the
+  description above.
+<p> The size of the stack s should be greater or equals to the number of arguments the instruction 
+i expects, i.e. for a Plus instruction, the stack should have at least two elements (i.e.  instr Plus [1.; 1.]). 
+Return None if this invariant is violated. </p>
+
+
+<pre>
+# instr Mult [5.0; 5.5];;
+- : float list option = Some [27.5]
+# instr Plus [2.2; 3.3; 5.0];;
+- : float list option = Some [5.5; 5.]
+# instr (Float 4.2) [2.2; 3.3; 5.5];;
+- : float list option = Some [4.2; 2.2; 3.3; 5.5] 
+</pre>
+</li>
+
+
+<li> Implement a function
+  <code>prog:instruction list -> float option</code> which takes a list of
+  instructions and computes the resulting floating point value. 
+  If the list of instruction is not well-formed, return None as a final result.
+
+   <i>Hint:</i> Implement a helper function that takes a list of
+   instructions and a stack and returns the final floating point
+   value.
+
+<pre>
+# prog [Float 2.2; Float 3.3; Plus; Float 5.; Mult];;
+- : float option = Some 27.5 
+</pre>
+</li>
+</ul
+
+</section>
+
+

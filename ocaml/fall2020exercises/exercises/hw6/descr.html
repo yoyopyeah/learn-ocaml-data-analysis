@@ -1,0 +1,104 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["asciimath2jax.js"],
+  })
+</script>
+<ol><li>
+<h2>Parsing using Continuations</h2>
+
+<p>
+    For this assignment, we will implement our parser using continuations. Recall our language of arithmetic expressions, which includes operations <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and <code>()</code>'s. The language is specified by the following grammar:
+</p>
+
+<center>
+    <table style="border-spacing: 5px">
+        <tr>
+            <td>Final expression</td>
+            <td>`E`</td>
+            <td>::=</td>
+            <td>`S ;`</td>
+        </tr>
+        <tr>
+            <td>S-expression (expression with +, -) </td>
+            <td>`S`</td>
+            <td>::=</td>
+            <td>`P` + `S` | `P` - `S` | `P`</td>
+        </tr>
+        <tr>
+            <td>P-expression (expression with *, /)</td>
+            <td>`P`</td>
+            <td>::=</td>
+            <td>`A` * `P` | `A` / `P` | `A`</td>
+        </tr>
+        <tr>
+            <td>Atomic expression</td>
+            <td>`A`</td>
+            <td>::=</td>
+            <td>`n` | `( S )`</td>
+        </tr>
+    </table>
+</center>
+
+<p>
+    As before, we have implemented a simple lexer which translates a string into a list of tokens. It is provided for you in the prelude. The datatypes <code>token</code> and <code>exp</code> from the previous assignment remain unchanged. The evaluator function <code>eval</code> is provided for you in the template as before, and you can use it once you have implemented your parser.
+</p>
+<p>
+    The fundamental goal of a parser is to take a list <code>s</code> of tokens and produce an abstract syntax tree. The problem is that if we want to parse an S-expression containing <code>+</code>, we need to process the list <code>s</code> and split it into <code>s1</code> followed by the symbol for <code>+</code> followed by some string <code>s2</code>. Finding this split is in general tricky. We solve this problem differently. Note that the problem is similar to the regular expression matcher we discussed in class and we will use a similar solution based on continuations.
+</p>
+
+<p>
+    The parser accepts a list of tokens and we will use part of the token list to build an expression <code>e1</code>. The continuation receives the remaining token list <code>toklist'</code> for further processing together with the expression <code>e1</code>. It will then continue to parse <code>toklist'</code> and build compound expressions given <code>e1</code>.
+</p>
+
+<p>
+    For example, to parse an S-expression, we use part of the token list to build a P-expression called <code>e</code>. When we are done, the continuation receives a remaining token list <code>toklist'</code> together with an expression <code>e</code>. Following the grammar rules, if <code>toklist'</code> contains as a next token <code>PLUS</code> or <code>MINUS</code>, we continue building an S-expression. Otherwise we simply return <code>e</code>, which is also a valid S-expression.
+</p>
+<p>
+    If parsing was successful, the token stream will eventually be empty, and we can simply return the built expression <code>e</code>. This is done in the <code>parse</code> function.
+</p>
+
+<p>
+    Your task is to implement the functions <code>parseSExp</code>, <code>parsePExp</code>, and <code>parseAtom</code> according to the grammar rules. Each of these functions has type <code>token list -> (token list -> exp -> 'a) -> 'a</code>, where <code>(token list -> exp -> 'a)</code> is the type of the continuation given as argument.
+</p>
+
+<ol type="a">
+    <li>
+        <code>[25 points] parseSExp toklist sc</code>: successfully parses part of the tokens called <code>toklist</code> into an S-Expression <code>s</code> according to the defined grammar. If it succeeds, it will call the continuation <code>sc</code> with the remaining list of tokens and <code>s</code>.
+    </li>
+    <li>
+        <code>[20 points] parsePExp toklist sc</code>: successfully parses part of the tokens called <code>toklist</code> into a P-Expression <code>p</code> according to the defined grammar. If it succeeds, it will call the continuation <code>sc</code> with the remaining list of tokens and <code>p</code>.
+    </li>
+    <li>
+        <code>[20 points] parseAtom toklist sc</code>: successfully parses part of the tokens called <code>toklist</code> into an A-Expression <code>a</code> according to the defined grammar. If it succeeds, it will call the continuation <code>sc</code> with the remaining list of tokens and <code>a</code>.
+    </li>
+</ol>
+</li>
+<li>
+    <h2>Lazy functional programming: Hamming numbers</h2>
+    <p><strong> There is no autograder for this exercise. Write your solutions normally under the definitions we prove on the template. You won't see any outcome of the grader for the functions in this exercise. We will manually mark your solutions. The autograder will go up to 65 points (points from the previous question). </strong></p>
+    <p>
+        In this question you are going to produce the infinite stream of Hamming
+        numbers.These are numbers that have as prime divisors `2` or `3` or `5` but no other prime
+        divisors. The "or" in the previous sentence is the "logical or" so of course we 
+        include numbers that have both <code>2</code> and <code>3</code> or <code>2</code> and <code>5</code> and so on as Hamming
+        numbers.  Hamming numbers are given by `2^i 3^j 5^k` where `i,j` and
+        `k` are each greater than or equal to zero. The first few Hamming
+        numbers are <code>1,2,3,4,5,6,8,9,10,12,15,16,18,20,24,...`</code>.
+    </p>
+    <ol type="a">
+        <li>
+            [25 points] Write a function <code>merge (s1: 'a str) (s2: 'a str) : 'a str</code> that takes two streams of integers in
+            increasing order and with no duplicates and merges them into a single stream containing all the elements of both the streams again in increasing order and
+            with no duplicates. Take a look at the prelude to check the structure we defined streams, as well as a few auxiliarly functions that might help you with
+            the development of this exercise. <strong>The placeholder code on the template returns <code>()</code> only for avoiding any issues with the grader for Q1. You must fix the return type.</strong>
+        </li>
+        <li>
+            [10 points] Use the function from (a) to implement the
+            lazy stream <code>hamming_series</code>.  It is imperative that your stream be built lazily enough that when we listify prefixes of it, it does not
+            diverge.  The solution is very easy if you think lazily.  There is no need
+            for "extra variables" to keep "track of" anything. <strong>The placeholder code on the template returns <code>()</code> only for avoiding any issues with the grader for Q1. You must fix the return type.</strong>
+        </li>
+    </ol>
+
+</li>
+</ol>
