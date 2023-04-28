@@ -87,3 +87,6 @@ Where analysis related data and output are located.
    - time
 - grade progression per question
   - once type checked how quickly a student gets 100
+
+
+id, timestamp, error_type

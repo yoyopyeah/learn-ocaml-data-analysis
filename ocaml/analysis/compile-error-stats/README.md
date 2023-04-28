@@ -1,1 +1,0 @@
-id, timestamp, error_type, event_key

@@ -5,7 +5,6 @@
 >>> processed 13634 submissions in compileCodeHW5_normalizedID_sanitized
 >>> processed 10554 submissions in compileCodeHW6_normalizedID_sanitized
 
-
 >>> processed 3474 submissions in evalCodeHW1_normalizedID_sanitized
 >>> processed 6054 submissions in evalCodeHW2_normalizedID_sanitized
 >>> processed 4458 submissions in evalCodeHW3_normalizedID_sanitized

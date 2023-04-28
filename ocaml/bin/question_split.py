@@ -127,7 +127,7 @@ def main():
 
   for collection in collections:
     count = 0
-    if "HW5" not in collection: continue #TODO: only process HW5 for now
+    if "HW5" in collection: continue #TODO: only process HW5 for now
     # if "grade" not in collection: continue #TODO: only process gradeHW5
     print("\n>>> processing collection " + collection)
     clean_collection_name = collection.split("_")[0]
