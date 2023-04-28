@@ -1,0 +1,179 @@
+[
+  [
+    "basic_ocaml",
+    {
+      "title": "Basic OCaml",
+      "short_description": "Basic types and operations"
+    }
+  ],
+  [
+    "functions",
+    {
+      "title": "Functions",
+      "short_description": "Defining functions"
+    }
+  ],
+  [
+    "tutorial_week1",
+    {
+      "title": "[Tutorial session] Sept 10th - Week 1",
+      "short_description": "Types, Variables and Bindings, Recursive functions, Tail Recursion"
+    }
+  ],
+  [
+    "datatypes",
+    {
+      "title": "Datatypes",
+      "short_description": "Code for Lecture 3: Datatypes"
+    }
+  ],
+  [
+    "trees",
+    {
+      "title": "Trees",
+      "short_description": "Datatypes: Binary Trees"
+    }
+  ],
+  [
+    "tutorial_week2",
+    {
+      "title": "[Tutorial session] Sept 17th - Week 2",
+      "short_description": "Datatypes"
+    }
+  ],
+  [
+    "tutorial_week3",
+    {
+      "title": "[Tutorial session] Sept 24th - Week 3",
+      "short_description": "Induction"
+    }
+  ],
+  [
+    "hofun1",
+    {
+      "title": "HOF - part 1",
+      "short_description": "HOF"
+    }
+  ],
+  [
+    "hofun2",
+    {
+      "title": "HOF - part 2",
+      "short_description": "HOF"
+    }
+  ],
+
+  [
+    "tutorial_week4",
+    {
+      "title": "[Tutorial session] Oct 1st - Week 4",
+      "short_description": "Higher-Order Functions"
+    }
+  ],
+  [
+    "references",
+    {
+      "title": "References",
+      "short_description": "ref.ml"
+    }
+  ],
+  [
+    "tutorial_week5",
+    {
+      "title": "[Tutorial session] Oct 8th - Week 5",
+      "short_description": "References"
+    }
+  ],
+  [
+    "exceptions",
+    {
+      "title": "Exceptions",
+      "short_description": "exceptions.ml"
+    }
+  ],
+  [
+    "tutorial_week6",
+    {
+      "title": "[Tutorial session] Oct 15th - Week 6",
+      "short_description": "Exceptions"
+    }
+  ],
+  [
+    "tutorial_week7",
+    {
+      "title": "[Tutorial session] Oct 21st - Week 7",
+      "short_description": "Continuations"
+    }
+  ],
+  [
+    "lazy",
+    {
+      "title": "Lazy programming",
+      "short_description": "lazy.ml"
+    }
+  ],
+  [
+    "lazy-finite",
+    {
+      "title": "Suspended computation",
+      "short_description": "lazy-finite.ml"
+    }
+  ],
+  [
+    "tutorial_week8",
+    {
+      "title": "[Tutorial session] Oct 29th - Week 8",
+      "short_description": "Lazy Programming"
+    }
+  ],
+  [
+    "tutorial_week9",
+    {
+      "title": "[Tutorial session] Nov 05th - Week 9",
+      "short_description": "Streams and Lazy Programming, Continuations"
+    }
+  ],
+  [
+    "mini-lang-basic",
+    {
+      "title": "Mini-Lang",
+      "short_description": "mini_lang_basic.ml"
+    }
+  ],
+  [
+    "tutorial_week10",
+    {
+      "title": "[Tutorial session] Nov 12th - Week 10",
+      "short_description": "Introduction to Fundamentals in Programming Languages"
+    }
+  ],
+  [
+    "tutorial_week11",
+    {
+      "title": "[Tutorial session] Nov 19th - Week 11",
+      "short_description": "Growing a toy language"
+    }
+  ],
+  [
+    "mini-lang-let",
+    {
+      "title": "Mini-Lang Let",
+      "short_description": "mini-lang-let.ml"
+    }
+  ],
+  [
+    "mini-lang-let-opsem",
+    {
+      "title": "Mini-Lang Let Op",
+      "short_description": "mini-lang-let-opsem.ml"
+    }
+  ],
+  [
+    "tutorial_week12",
+    {
+      "title": "[Tutorial session] Nov 26th - Week 12",
+      "short_description": "Type Inference"
+    }
+  ]
+
+]

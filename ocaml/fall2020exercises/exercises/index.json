@@ -1,0 +1,60 @@
+{
+    "learnocaml_version": "2",
+    "groups": {
+        "demo": {
+            "title": "Demo exercise pack",
+            "exercises": [
+                "demo"
+            ]
+        },
+
+        "comp302-hw1": {
+            "title": "COMP 302 Assignments - HW1",
+            "exercises": [
+                "hw1"
+            ]
+        },
+
+        "comp302-hw2": {
+            "title": "COMP 302 Assignments - HW2",
+            "exercises": [
+                "hw2"
+            ]
+        },
+
+        "comp302-hw3": {
+            "title": "COMP 302 Assignments - HW3",
+            "exercises": [
+                "hw3"
+            ]
+        },
+        "comp302-hw4": {
+            "title": "COMP 302 Assignments - HW4",
+            "exercises": [
+                "hw4"
+            ]
+        },
+
+        "comp302-hw5": {
+            "title": "COMP 302 Assignments - HW5",
+            "exercises": [
+                "hw5"
+            ]
+        },
+
+        "comp302-hw6": {
+            "title": "COMP 302 Assignments - HW6",
+            "exercises": [
+                "hw6"
+            ]
+        },
+
+        "comp302-hw7": {
+            "title": "COMP 302 Final Project",
+            "exercises": [
+                "hw7"
+            ]
+        }
+    }
+
+}

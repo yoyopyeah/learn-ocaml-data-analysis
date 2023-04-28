@@ -1,0 +1,13 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 0,
+  "title"              : "Homework 1",
+  "short_description"  : "Week 1",
+  "identifier"         : "hw1",
+  "authors"            : [],
+  "focus"              : [],
+  "requirements"       : [],
+  "forward_exercises"  : [],
+  "backward_exercises" : []
+}

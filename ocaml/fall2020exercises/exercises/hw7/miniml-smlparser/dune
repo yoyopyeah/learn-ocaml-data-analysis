@@ -1,0 +1,7 @@
+(ocamllex (modules lexer))
+
+(library
+ (name miniml)
+ (flags :standard -w -27 -w -32)
+ (modules (:standard))
+)

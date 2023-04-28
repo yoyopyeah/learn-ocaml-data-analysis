@@ -1,0 +1,20 @@
+what do we want to do with the assignment?
+
+1. the problem is that we don't really have multiple files in LearnOcaml,
+as a result, we need to include the parser and the lexer in one single big file.
+I guess it makes sense to ask students to provide a number of tests of parsing.
+
+2. how do we grade students? do we have automated grade?
+
+3. how do we want to have type variables and unification?
+
+4. do we want to do bidirectional type checking, or just synthesis?
+
+5. we should double check and confirm the syntax.
+
+6. more operators?
+
+
+7. students should write their own free variables. (Q 0.5)
+8. dead code elimination (Q 1.5)
+9. constant inlining

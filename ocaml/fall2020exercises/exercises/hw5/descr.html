@@ -1,0 +1,83 @@
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["asciimath2jax.js"],
+  })
+</script>
+
+
+<section id="ex2">
+  <h2>Control flow and backtracking: I want to travel</h2>
+
+  <p>
+    Given the COVID-19 pandemic and all travel restrictions, we don't travel as much as we are used to, but we can still dream to travel around Canada and make some
+    plans. So, you sit down to relax after a stressful quiz, you dream  about visiting places and you start to wonder, how could I travel to Iqaluit and if I were in 
+    Iqaluit, where could I travel to? 
+  </p>
+
+  <p>
+    In this exercise, we will be implementing backtracking search on labelled graphs, using exceptions. We will represent a graph using the record type <code>'a graph</code> as defined for you in the prelude: a graph is made up of a list of nodes of type <code>'a</code> and a list of edges. An edge is represented by a pair <code>(v1, v2, w)</code>, meaning a <em>directed</em> edge going from the node <code>v1</code> to the node <code>v2</code> and the associated cost is <code>w</code>.
+  </p>
+
+  <p>
+    In all of the following questions, you may assume that the input graphs are well-formed: the nodes list will be a list of <em>all</em> the nodes in the graph, and no other values will appear in the edge pairs. (However, it is possible for a node in the graph not to be connected to any other nodes.) You can also assume that there will be no duplicate nodes or edges, and that there will be no self-loops (edges from a node to itself).
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        To warm up, and to get used to the representation of graphs we have given you, write tests for and implement a function <code>neighbours: 'a graph -> 'a -> ('a * int) list</code> which, given a graph and a node that is in that graph, returns a list of that node's <em>out-neighbours</em> together with the cost it takes to reach that node. A node <code>v2</code> is an out-neighbour of node <code>v1</code> if an edge <code>(v1, v2, w)</code> exists in the graph, i.e. there exists a directed edge <em>from</em> <code>v1</code> <em>to</em> <code>v2</code> with label <code>w</code>. 
+      </p>
+
+      <p>
+        This function can be implemented very nicely and simply by using <code>List.fold_left</code> or <code>List.fold_right</code>, though we do not require you to do this. 
+      </p>
+
+      <p>
+        <strong>Some notes</strong>: for both your test cases and your implementation, the order of nodes in the result list does not matter. We also do not expect you to be using very large graphs in your test cases; keep them simple. Finally, your test cases for <code>neighbours</code> should use input graphs of type <code>string graph</code>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Write a function <code>find_path: 'a graph -> 'a -> 'a -> 'a list * int</code> which, given a graph <code>g</code> and two nodes <code>a</code> and <code>b</code> in the graph, returns a path (a list of nodes to visit, in order) from <code>a</code> to <code>b</code> together with the total cost to get to <code>b</code> from <code>a</code>. This path should include both of its endpoints, i.e. the list you return should start with the node <code>a</code> and end with the node <code>b</code>. There may be many possible paths; you only need to return one of them; the path that you return does not need to be shortest one; any path will do. If no possible path exists, you should raise the exception <code>Fail</code>.
+      </p>
+
+      <p>
+        For this question, your function should be implemented using <strong>backtracking</strong> with the <code>Fail</code> exception. We recommend implementing your function using two mutually recursive functions <code>aux_node</code> and <code>aux_list</code> which process a single node and a weight, and a list of nodes, respectively. In this question, you are also allowed to rewrite the <strong>inner auxiliary functions and the way they are declared as you wish</strong>, <strong>as long as you keep their input and output types of the main function the same</strong>.
+      </p>
+
+      <p>
+        <strong>Note</strong>: the path that you return should <em>not</em> contain any cycles, so no node should appear in your path more than once. In order to accomplish this you will need to keep track of a list of visited nodes, as indicated in the template. 
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Write a function <code>find_path': 'a graph -> 'a -> 'a -> 'a list * int</code>, where once again <code>find_path' g a b</code> returns a path from <code>a</code> to <code>b</code>, or raises the exception <code>Fail</code> if no path exists. This time your function should be implemented <strong>tail-recursively using continuations</strong>. If your function is found by the grader not to be tail-recursive, you will receive a grade of 0.
+      </p>
+
+      <p>
+        Your recursive helper(s) should now take two extra parameters for a failure continuation and success continuation, respectively, as indicated in the template (failure and success continuations). You should not be raising any exceptions during execution unless no path exists between the two given nodes. In this question, you are also allowed to rewrite the <strong>inner auxiliary functions and the way they are declared as you wish</strong>, <strong>as long as you keep their input and output types of the main function the same</strong>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Write a function <code>find_all_paths: 'a graph -> 'a -> 'a -> ('a list * int) list</code>, where  <code>find_all_paths g a b</code> returns all path from <code>a</code> to <code>b</code> together with their associated cost. If no path exists, return an empty list. 
+      </p>
+
+      <p>
+    <strong>Note</strong>: think carefully how you build a set of paths recursively; in particular, you might want to ask: If there is an edge between <code>a</code> and <code>a'</code>, and given that I (recursively) already have a set of paths from <code>a'</code> to <code>b</code>, how can I generate a set of paths from  <code>a</code> to <code>b</code>? - Imagine how these two sets look!
+      </p>
+      <p>
+        In this question, you are also allowed to rewrite the <strong>inner auxiliary functions and the way they are declared as you wish</strong>, <strong>as long as you keep their input and output types of the main function the same</strong>.
+      </p>
+    </li>
+
+        <li>
+      <p>
+        Write a function <code>find_shortest_path: 'a graph -> 'a -> 'a -> ('a list * int) option</code>, where <code>find_shortest_path g a b</code> returns the shortest (lowest cost) path from <code>a</code> to <code>b</code> together with its associated cost, or returns <code>None</code> if no path exists. 
+      </p>
+    </li>
+  </ol>
+</section>

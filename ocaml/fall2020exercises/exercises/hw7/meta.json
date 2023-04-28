@@ -1,0 +1,13 @@
+{
+  "learnocaml_version" : "2",
+  "kind"               : "exercise",
+  "stars"              : 0,
+  "title"              : "Final Project",
+  "short_description"  : "Final project",
+  "identifier"         : "hw7",
+  "authors"            : [],
+  "focus"              : [],
+  "requirements"       : [],
+  "forward_exercises"  : [],
+  "backward_exercises" : []
+}

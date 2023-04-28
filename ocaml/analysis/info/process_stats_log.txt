@@ -1,0 +1,20 @@
+>>> processed 6594 submissions in compileCodeHW1_normalizedID_sanitized
+>>> processed 14485 submissions in compileCodeHW2_normalizedID_sanitized
+>>> processed 12399 submissions in compileCodeHW3_normalizedID_sanitized
+>>> processed 19670 submissions in compileCodeHW4_normalizedID_sanitized
+>>> processed 13634 submissions in compileCodeHW5_normalizedID_sanitized
+>>> processed 10554 submissions in compileCodeHW6_normalizedID_sanitized
+
+>>> processed 3474 submissions in evalCodeHW1_normalizedID_sanitized
+>>> processed 6054 submissions in evalCodeHW2_normalizedID_sanitized
+>>> processed 4458 submissions in evalCodeHW3_normalizedID_sanitized
+>>> processed 7987 submissions in evalCodeHW4_normalizedID_sanitized
+>>> processed 4543 submissions in evalCodeHW5_normalizedID_sanitized
+>>> processed 4926 submissions in evalCodeHW6_normalizedID_sanitized
+
+>>> processed 3414 submissions in gradeHW1_normalizedID_sanitized
+>>> processed 4883 submissions in gradeHW2_normalizedID_sanitized
+>>> processed 4366 submissions in gradeHW3_normalizedID_sanitized
+>>> processed 5863 submissions in gradeHW4_normalizedID_sanitized
+>>> processed 5059 submissions in gradeHW5_normalizedID_sanitized
+>>> processed 4158 submissions in gradeHW6_normalizedID_sanitized
