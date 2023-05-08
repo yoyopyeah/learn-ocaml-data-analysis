@@ -1,0 +1,129 @@
+id,timestamp,grade,event_key,error_category
+edf026518982b2920e08c411518d28c4,Sep_13_2020_00:40:49.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+
+
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+val domain : unit -> 'a = <fun>
+Exception:
+Failure ""REMINDER: You should not be writing tests for undefined values."".
+Called from file ""zips_fall2020/gradeHW1_question_based/exercise/solution.ml"", line 2, characters 8-19
+Called from unknown location
+
+
+"
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_05:27:07.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_04:16:50.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_04:08:41.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_21:00:53.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_04:10:43.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_21:05:20.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_03:54:31.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_04:14:30.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_19:45:43.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_04:04:01.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_04:13:11.ml,0,grade,Unbound value
+bd477a95c707ee5cd0cf12efcfa0529b,Sep_16_2020_20:59:53.ml,0,grade,Unbound value
+8fc3745aa83fa317ef120bf1f133f9c7,Sep_17_2020_15:42:33.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+
+
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+val domain : unit -> 'a = <fun>
+Exception:
+Failure ""REMINDER: You should not be writing tests for undefined values."".
+Called from file ""zips_fall2020/gradeHW1_question_based/exercise/solution.ml"", line 2, characters 8-19
+Called from unknown location
+
+
+"
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:28:41.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:36:06.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:50:10.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:34:11.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_15:34:00.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:31:10.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:34:34.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_15:35:16.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:30:12.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:49:25.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:35:45.ml,0,grade,Unbound value
+353ebc334ebc49dc488247da6776f007,Sep_11_2020_16:48:55.ml,0,grade,Unbound value
+540d27ec01ef2ffcf9c7b9b4fa5104da,Sep_13_2020_18:27:10.ml,0,eval,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/evalCodeHW1_question_based/exercise/solution.ml"", line 5, characters 56-62:
+This variant expression is expected to have type exn
+       The constructor Domain does not belong to type exn
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+val domain : unit -> 'a = <fun>
+
+
+"
+540d27ec01ef2ffcf9c7b9b4fa5104da,Sep_13_2020_18:29:09.ml,0,eval,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/evalCodeHW1_question_based/exercise/solution.ml"", line 5, characters 56-62:
+This variant expression is expected to have type exn
+       The constructor Domain does not belong to type exn
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+val domain : unit -> 'a = <fun>
+
+
+"
+540d27ec01ef2ffcf9c7b9b4fa5104da,Sep_13_2020_18:28:06.ml,0,eval,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/evalCodeHW1_question_based/exercise/solution.ml"", line 5, characters 56-62:
+This variant expression is expected to have type exn
+       The constructor Domain does not belong to type exn
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+val domain : unit -> 'a = <fun>
+
+
+"
+540d27ec01ef2ffcf9c7b9b4fa5104da,Sep_13_2020_18:25:57.ml,0,eval,Unbound value
+540d27ec01ef2ffcf9c7b9b4fa5104da,Sep_13_2020_18:28:37.ml,0,eval,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/evalCodeHW1_question_based/exercise/solution.ml"", line 5, characters 56-62:
+This variant expression is expected to have type exn
+       The constructor Domain does not belong to type exn
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+val domain : unit -> 'a = <fun>
+
+
+"
+540d27ec01ef2ffcf9c7b9b4fa5104da,Sep_13_2020_18:25:14.ml,0,eval,Type error

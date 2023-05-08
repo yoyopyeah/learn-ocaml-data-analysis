@@ -1,0 +1,871 @@
+id,timestamp,grade,event_key,error_category
+82c2dc28f573be05cb14e902239c987a,Oct_25_2020_14:28:56.ml,0,compile,Type error
+82c2dc28f573be05cb14e902239c987a,Oct_25_2020_14:45:52.ml,0,compile,Unbound value
+82c2dc28f573be05cb14e902239c987a,Oct_25_2020_14:42:03.ml,0,compile,Unbound value
+82c2dc28f573be05cb14e902239c987a,Oct_25_2020_14:45:58.ml,0,compile,Type error
+82c2dc28f573be05cb14e902239c987a,Oct_25_2020_14:42:17.ml,0,compile,Type error
+288fa3c5f405447f75811bcd613ac385,Oct_30_2020_03:21:16.ml,0,compile,Type error
+288fa3c5f405447f75811bcd613ac385,Oct_30_2020_03:47:48.ml,0,compile,Type error
+288fa3c5f405447f75811bcd613ac385,Oct_30_2020_03:22:39.ml,0,compile,Type error
+288fa3c5f405447f75811bcd613ac385,Oct_30_2020_03:19:28.ml,0,compile,Type error
+288fa3c5f405447f75811bcd613ac385,Oct_30_2020_03:22:02.ml,0,compile,Type error
+e44b4c849550a0da76b17f1cb758e6df,Oct_29_2020_11:10:44.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_10:27:02.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_09:45:59.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_10:27:37.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_11:22:14.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_11:27:07.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_09:43:53.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_11:21:49.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_11:27:15.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_09:43:22.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_10:12:35.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_09:43:06.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_10:27:25.ml,0,compile,Type error
+6216de078faa53b915b7c3eb59a7b998,Oct_26_2020_11:27:47.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:21:47.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:55:07.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:16:10.ml,0,compile,Unbound value
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:20:59.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:23:27.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_20:33:13.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_20:53:33.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_20:53:02.ml,0,compile,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:19:59.ml,0,compile,Unbound value
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:20:08.ml,0,compile,Unbound value
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:06:28.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:05:37.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:00:19.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:01:28.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:08:44.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:01:50.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:09:15.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:09:56.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:10:33.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:02:48.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:15:48.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:05:44.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:07:02.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:14:17.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:07:07.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_18:14:36.ml,0,compile,Type error
+dad0ff1ef129748fdedf263b684855c5,Oct_29_2020_17:50:09.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:10:22.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:06:31.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:05:09.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:09:04.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:10:51.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:03:57.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_23_2020_19:37:19.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:10:28.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:04:15.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:06:13.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:09:00.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:06:27.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:07:02.ml,0,compile,Type error
+61d5d7add8610b18a2806e299f4e9b9e,Oct_25_2020_12:09:54.ml,0,compile,Type error
+4f77ac213cf0ae0db5b72807a24c91d2,Oct_24_2020_01:09:49.ml,0,compile,Type error
+4f77ac213cf0ae0db5b72807a24c91d2,Oct_24_2020_01:13:00.ml,0,compile,Type error
+76dcfda84c0890ca135f54d51a2d27e0,Oct_29_2020_22:40:17.ml,0,compile,Unbound value
+76dcfda84c0890ca135f54d51a2d27e0,Oct_29_2020_22:41:41.ml,0,compile,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/compileCodeHW5_question_based/exercise/solution.ml"", line 8, characters 51-53:
+Unbound record field a1
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+2779eda968d3d2377e7f5d07f0471c77,Oct_30_2020_01:55:44.ml,0,compile,Unbound value
+2779eda968d3d2377e7f5d07f0471c77,Oct_30_2020_01:56:48.ml,0,compile,Type error
+2779eda968d3d2377e7f5d07f0471c77,Oct_30_2020_02:00:12.ml,0,compile,Type error
+2779eda968d3d2377e7f5d07f0471c77,Oct_30_2020_02:00:23.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_26_2020_01:21:50.ml,0,compile,Unbound value
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:34:56.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_26_2020_01:29:03.ml,0,compile,Unbound value
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:37:43.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:53:34.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:39:51.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:34:51.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:23:11.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:53:03.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_28_2020_22:35:44.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_26_2020_01:31:32.ml,0,compile,Type error
+e6460429183ed570ffade8f926256e4e,Oct_26_2020_01:40:30.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:52:44.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:50:56.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:53:15.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_10:36:00.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_10:42:30.ml,0,compile,Unbound value
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:51:28.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_10:36:19.ml,0,compile,Unbound value
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:55:03.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:54:40.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:57:10.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_18:50:04.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_19:01:05.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_19:03:50.ml,0,compile,Type error
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_10:36:15.ml,0,compile,Unbound value
+099d65e14969b8d72fc08b5e16d6a37d,Oct_29_2020_10:42:37.ml,0,compile,Unbound value
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:13:24.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:19:03.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:18:58.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:14:04.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:15:53.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:20:37.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:22:57.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:20:06.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:17:38.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:11:31.ml,0,compile,Type error
+4d6636c20bce244a15e4bba83f084f82,Oct_29_2020_12:20:11.ml,0,compile,Type error
+051f03c3bd17ec0ade15d0e4d15770c3,Oct_23_2020_17:57:24.ml,0,compile,Type error
+051f03c3bd17ec0ade15d0e4d15770c3,Oct_23_2020_18:33:00.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_25_2020_00:17:48.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_22:39:14.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_21:25:00.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_21:27:30.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_22:39:45.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_21:28:17.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_21:22:47.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_21:21:43.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_22:41:17.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_21:26:01.ml,0,compile,Type error
+a2eb88d37ac1790a9749b7799df911aa,Oct_24_2020_21:29:31.ml,0,compile,Type error
+618781e4466083635865f8da493bd26e,Oct_29_2020_13:32:39.ml,0,compile,Type error
+618781e4466083635865f8da493bd26e,Oct_29_2020_13:31:59.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_14:15:16.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_14:13:15.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_14:12:56.ml,0,compile,Unbound value
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_15:54:04.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_15:53:40.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_15:45:27.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_14:05:37.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_15:45:55.ml,0,compile,Type error
+a73d8376b084d8b62c3c20ebafa37973,Oct_27_2020_14:05:17.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:27:42.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:30:31.ml,0,compile,Unbound value
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:28:03.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:25:50.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:27:57.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:23:14.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:26:36.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:28:33.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:33:17.ml,0,compile,Type error
+c077a81dc8f73ea707aefbcf20856af4,Oct_28_2020_14:31:00.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_15:35:08.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_09:01:20.ml,0,compile,Unbound value
+edf026518982b2920e08c411518d28c4,Oct_27_2020_09:00:33.ml,0,compile,Unbound value
+edf026518982b2920e08c411518d28c4,Oct_27_2020_15:33:58.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_09:00:36.ml,0,compile,Unbound value
+edf026518982b2920e08c411518d28c4,Oct_27_2020_15:35:17.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_15:35:23.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_15:37:11.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_09:00:46.ml,0,compile,Unbound value
+edf026518982b2920e08c411518d28c4,Oct_27_2020_15:37:37.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_15:36:18.ml,0,compile,Type error
+edf026518982b2920e08c411518d28c4,Oct_27_2020_09:00:07.ml,0,compile,Unbound value
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:19:14.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:21:05.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:31:24.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:23:09.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:30:37.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:29:17.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:23:17.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:29:56.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:26:13.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:32:21.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:33:09.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:18:45.ml,0,compile,Type error
+cd3d68f960f2b7675371a3987f894a2f,Oct_28_2020_01:20:37.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:43:31.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:04:01.ml,0,compile,Unbound value
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:30:05.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:41:14.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:42:02.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:37:44.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:49:27.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:49:35.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_12:08:31.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_11:38:31.ml,0,compile,Type error
+7fb3ba7b06312c6714f82ab7843d7c20,Oct_29_2020_12:09:31.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:00:18.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:25:10.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:20:36.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:20:59.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:18:05.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:23:21.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:59:32.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:11:14.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:07:21.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:10:35.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:06:56.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:22:36.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:07:50.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:07:31.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:58:10.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_27_2020_00:08:01.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:20:37.ml,0,compile,Type error
+2fdc24731ff44c673ea9139769df29c4,Oct_26_2020_23:55:34.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_03:53:15.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:01:03.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:23:49.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:24:35.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:01:40.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:23:05.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:05:09.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_03:54:06.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_03:53:30.ml,0,compile,Unbound value
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:05:17.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:26:34.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:00:13.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:25:05.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_03:59:35.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_03:52:53.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:25:40.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_03:59:26.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:26:36.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_03:53:49.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:08:10.ml,0,compile,Type error
+2dc118fe809a96a285547b0ef396e0a2,Oct_30_2020_04:03:04.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:22:29.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:13:53.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:13:35.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:15:02.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:17:13.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:12:57.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:21:19.ml,0,compile,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:32:58.ml,0,compile,Type error
+1ab708a6f017a78a5bdce6722e9c09fd,Oct_30_2020_16:46:15.ml,0,compile,Type error
+1ab708a6f017a78a5bdce6722e9c09fd,Oct_30_2020_16:49:12.ml,0,compile,Type error
+1ab708a6f017a78a5bdce6722e9c09fd,Oct_30_2020_17:10:39.ml,0,compile,Type error
+63997a1582e24387e6499a4fb15b340e,Oct_29_2020_13:49:17.ml,0,compile,Type error
+23f6de345d87086fa712ac5775487cca,Oct_28_2020_18:35:29.ml,0,compile,Type error
+eb6cd64e9137c4406b016b7d3f330e5a,Oct_24_2020_22:52:28.ml,0,compile,Type error
+eb6cd64e9137c4406b016b7d3f330e5a,Oct_24_2020_22:56:50.ml,0,compile,Type error
+eb6cd64e9137c4406b016b7d3f330e5a,Oct_24_2020_22:53:44.ml,0,compile,Type error
+9c4023d66a98e831354b9b6942e473e7,Oct_24_2020_21:49:49.ml,0,compile,Type error
+9c4023d66a98e831354b9b6942e473e7,Oct_24_2020_21:51:40.ml,0,compile,Type error
+9c4023d66a98e831354b9b6942e473e7,Oct_24_2020_21:50:43.ml,0,compile,Type error
+9c4023d66a98e831354b9b6942e473e7,Oct_24_2020_21:56:23.ml,0,compile,Type error
+9c4023d66a98e831354b9b6942e473e7,Oct_24_2020_21:48:28.ml,0,compile,Type error
+9c4023d66a98e831354b9b6942e473e7,Oct_24_2020_21:56:29.ml,0,compile,Type error
+66ea5d13aedcb5e6a2b5e15914d102f8,Oct_24_2020_20:23:12.ml,0,compile,Type error
+66ea5d13aedcb5e6a2b5e15914d102f8,Oct_24_2020_20:24:44.ml,0,compile,Type error
+5101a7e8f9f62819280dbf4b0123ab04,Oct_26_2020_04:51:05.ml,0,compile,Type error
+5101a7e8f9f62819280dbf4b0123ab04,Oct_26_2020_04:51:18.ml,0,compile,Type error
+5101a7e8f9f62819280dbf4b0123ab04,Oct_26_2020_04:53:31.ml,0,compile,Type error
+279762f7565d1285e0463e44de7347c1,Oct_25_2020_15:28:33.ml,0,compile,Unbound value
+279762f7565d1285e0463e44de7347c1,Oct_25_2020_15:28:57.ml,0,compile,Unbound value
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:49:12.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:50:06.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_28_2020_13:14:49.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:33:16.ml,0,compile,Unbound value
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:33:32.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:50:16.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_28_2020_13:01:40.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:46:08.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:47:58.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_12:57:42.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:47:50.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:51:20.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:45:59.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:51:30.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:53:11.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:47:06.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:50:54.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_28_2020_12:58:04.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:26:27.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:42:46.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:48:44.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:49:01.ml,0,compile,Type error
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_27_2020_11:47:13.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:51:45.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:49:41.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:51:59.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:50:54.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:50:30.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:46:26.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:46:31.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:49:28.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:49:05.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:50:59.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:50:04.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:46:57.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:52:36.ml,0,compile,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:52:15.ml,0,compile,Type error
+d64b5e45ea7bd846bbdf925b681b2092,Oct_29_2020_16:32:01.ml,0,compile,Type error
+d64b5e45ea7bd846bbdf925b681b2092,Oct_29_2020_16:34:26.ml,0,compile,Type error
+d64b5e45ea7bd846bbdf925b681b2092,Oct_29_2020_16:32:28.ml,0,compile,Type error
+e77f18127bd824ad8646d14c1f5b7b55,Oct_26_2020_00:05:39.ml,0,compile,Type error
+e77f18127bd824ad8646d14c1f5b7b55,Oct_26_2020_00:05:52.ml,0,compile,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/compileCodeHW5_question_based/exercise/solution.ml"", line 2, characters 63-68:
+The constructor [] expects 0 argument(s),
+       but is applied here to 1 argument(s)
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:23:53.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:32:09.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_20:00:31.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:43:08.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:49:23.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:34:52.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:54:18.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:55:42.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:32:16.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:47:18.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:36:08.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:46:34.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:46:45.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:51:04.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:27:24.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:37:22.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:45:55.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:50:35.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:30:48.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:47:57.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:50:46.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:24:01.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:17:41.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:54:55.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:34:55.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:44:45.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:29:47.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:17:30.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:50:09.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:53:10.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:27:46.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:45:38.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_19:34:35.ml,0,compile,Type error
+0b561330e6538dd7d8d3b1d2ae3508c2,Oct_24_2020_20:00:37.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:26:30.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:12:42.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:13:16.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:13:24.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:16:52.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:28:14.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:24:05.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:24:09.ml,0,compile,Type error
+5fb6a863ec51e70db20047ddb3bf1398,Oct_24_2020_12:26:20.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_15:56:47.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_15:55:56.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_16:19:41.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_16:19:10.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_16:19:05.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_16:19:16.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_15:55:02.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_15:54:36.ml,0,compile,Type error
+9fb2a26c1b8b91ace60413a70e94df55,Oct_29_2020_15:56:59.ml,0,compile,Type error
+3ef3283f8bf8c75ce823f0d294b08691,Oct_24_2020_18:42:52.ml,0,compile,Type error
+3ef3283f8bf8c75ce823f0d294b08691,Oct_24_2020_18:44:45.ml,0,compile,Type error
+3ef3283f8bf8c75ce823f0d294b08691,Oct_24_2020_18:43:50.ml,0,compile,Type error
+4bf74b57a469455ca352d3b147414c18,Oct_24_2020_15:22:04.ml,0,compile,Type error
+4bf74b57a469455ca352d3b147414c18,Oct_24_2020_15:24:55.ml,0,compile,Type error
+4bf74b57a469455ca352d3b147414c18,Oct_24_2020_15:29:20.ml,0,compile,Type error
+4bf74b57a469455ca352d3b147414c18,Oct_24_2020_15:21:57.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_19:42:44.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_22:54:58.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_19:50:36.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_19:41:19.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_20:05:46.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_19:40:33.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_20:13:01.ml,0,compile,Type error
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_29_2020_19:44:48.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:54:31.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:51:20.ml,0,compile,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:51:43.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:32:28.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:11:59.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:52:31.ml,0,compile,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:09:33.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:10:58.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:36:05.ml,0,compile,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:36:20.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:35:39.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:38:54.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:41:43.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:39:13.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:09:10.ml,0,compile,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:07:14.ml,0,compile,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:08:57.ml,0,compile,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:40:21.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:10:48.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:10:43.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:33:16.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:49:25.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:48:20.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:36:46.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:51:33.ml,0,compile,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:10:22.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:52:01.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_13:34:36.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:11:54.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:14:13.ml,0,compile,Type error
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_14:07:31.ml,0,compile,Unbound value
+f9e6bd86e370f22336829cf69d35963a,Oct_27_2020_11:21:23.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:42:10.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:41:12.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:30:03.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:36:49.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:40:05.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:35:31.ml,0,compile,Unbound value
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:41:39.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:39:21.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:35:58.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:35:13.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:41:47.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:37:55.ml,0,compile,Type error
+3647b6fd9957fc2af3a3ce46e01e4199,Oct_27_2020_15:36:19.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:45:30.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:50:38.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:47:36.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:52:21.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:46:02.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:46:11.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:46:37.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:46:15.ml,0,compile,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:50:11.ml,0,compile,Type error
+83bcbfc18093cc1dedaa07566007a1f5,Oct_26_2020_20:39:04.ml,0,compile,Type error
+83bcbfc18093cc1dedaa07566007a1f5,Oct_26_2020_20:38:36.ml,0,compile,Type error
+83bcbfc18093cc1dedaa07566007a1f5,Oct_26_2020_20:40:00.ml,0,compile,Type error
+83bcbfc18093cc1dedaa07566007a1f5,Oct_26_2020_20:39:21.ml,0,compile,Type error
+83bcbfc18093cc1dedaa07566007a1f5,Oct_26_2020_20:37:47.ml,0,compile,Type error
+83bcbfc18093cc1dedaa07566007a1f5,Oct_26_2020_20:36:23.ml,0,compile,Type error
+83bcbfc18093cc1dedaa07566007a1f5,Oct_26_2020_20:34:41.ml,0,compile,Type error
+01c66550e87b2a0498dbaf67a69a802c,Oct_29_2020_13:47:30.ml,0,compile,Type error
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_14:57:23.ml,0,compile,Type error
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_15:29:35.ml,0,compile,Type error
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_15:30:17.ml,0,compile,Type error
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_14:57:14.ml,0,compile,Unbound value
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_14:56:55.ml,0,compile,Unbound value
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_15:28:57.ml,0,compile,Type error
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_15:29:06.ml,0,compile,Type error
+963bc388671d744a671d20f6f4565cc6,Oct_26_2020_14:57:52.ml,0,compile,Type error
+1f008758750b6177fe85db106772ea0c,Oct_24_2020_11:42:28.ml,0,compile,Type error
+1f008758750b6177fe85db106772ea0c,Oct_24_2020_11:37:09.ml,0,compile,Type error
+1f008758750b6177fe85db106772ea0c,Oct_24_2020_11:34:26.ml,0,compile,Type error
+1f008758750b6177fe85db106772ea0c,Oct_24_2020_11:36:20.ml,0,compile,Type error
+9f81f2601e9c42377f97662efd179708,Oct_27_2020_03:28:51.ml,0,compile,Type error
+9f81f2601e9c42377f97662efd179708,Oct_27_2020_03:39:06.ml,0,compile,Type error
+9f81f2601e9c42377f97662efd179708,Oct_27_2020_03:33:47.ml,0,compile,Type error
+9f81f2601e9c42377f97662efd179708,Oct_27_2020_03:36:35.ml,0,compile,Type error
+9f81f2601e9c42377f97662efd179708,Oct_27_2020_03:39:54.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:05:31.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:10:52.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:16:03.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_10:47:16.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_14:25:48.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:04:49.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:04:27.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:04:23.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:15:25.ml,0,compile,Unbound value
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:11:23.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_11:59:55.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_28_2020_00:13:52.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:04:34.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:01:35.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_14:57:28.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:11:56.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_14:57:44.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:16:11.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:07:13.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:06:37.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:16:56.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_11:58:35.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:03:35.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:04:20.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_10:48:19.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:06:46.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:10:36.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:04:04.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:15:16.ml,0,compile,Unbound value
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:17:33.ml,0,compile,Type error
+d39f171169f0da7b324fdca437e564ce,Oct_25_2020_12:04:16.ml,0,compile,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:06:07.ml,0,compile,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:05:49.ml,0,compile,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:04:47.ml,0,compile,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:57:29.ml,0,compile,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:09:03.ml,0,compile,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:05:15.ml,0,compile,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:05:32.ml,0,compile,Unbound value
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:26:38.ml,0,compile,Unbound value
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:06:02.ml,0,compile,Unbound value
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:57:17.ml,0,compile,Unbound value
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:05:58.ml,0,compile,Unbound value
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:05:53.ml,0,compile,Unbound value
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:46:58.ml,0,compile,Type error
+ca7f9f308b17524c30488e4ad3da5df7,Oct_28_2020_02:50:14.ml,0,compile,Type error
+ca7f9f308b17524c30488e4ad3da5df7,Oct_28_2020_02:48:24.ml,0,compile,Type error
+ca7f9f308b17524c30488e4ad3da5df7,Oct_28_2020_02:49:06.ml,0,compile,Type error
+ca7f9f308b17524c30488e4ad3da5df7,Oct_28_2020_03:00:21.ml,0,compile,Type error
+ca7f9f308b17524c30488e4ad3da5df7,Oct_28_2020_02:48:34.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_09:58:57.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:16:21.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:04:19.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:01:43.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:07:29.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:15:53.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:00:31.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:05:54.ml,0,compile,Type error
+f23717a578e466198cfe841638c84f84,Oct_24_2020_10:02:56.ml,0,compile,Type error
+6801a190355a189645997a0b481965ef,Oct_23_2020_22:35:55.ml,0,compile,Type error
+6801a190355a189645997a0b481965ef,Oct_23_2020_22:35:49.ml,0,compile,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/compileCodeHW5_question_based/exercise/solution.ml"", line 3, characters 6-10:
+Unbound record field node
+Hint: Did you mean nodes?
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+6801a190355a189645997a0b481965ef,Oct_23_2020_22:36:14.ml,0,compile,Type error
+6801a190355a189645997a0b481965ef,Oct_23_2020_22:33:28.ml,0,compile,Type error
+d5d9b27a5c1a70aecc77b0fa91b1a724,Oct_25_2020_11:47:55.ml,0,compile,Type error
+d5d9b27a5c1a70aecc77b0fa91b1a724,Oct_25_2020_13:37:49.ml,0,compile,Type error
+d5d9b27a5c1a70aecc77b0fa91b1a724,Oct_25_2020_11:46:25.ml,0,compile,Type error
+d5d9b27a5c1a70aecc77b0fa91b1a724,Oct_25_2020_11:46:34.ml,0,compile,Type error
+7125c63544b50d3e21accd0964d1f4fa,Oct_29_2020_08:25:51.ml,0,compile,Type error
+7125c63544b50d3e21accd0964d1f4fa,Oct_29_2020_08:26:07.ml,0,compile,Type error
+7125c63544b50d3e21accd0964d1f4fa,Oct_29_2020_08:23:50.ml,0,compile,Type error
+7125c63544b50d3e21accd0964d1f4fa,Oct_29_2020_08:22:21.ml,0,compile,Unbound value
+7125c63544b50d3e21accd0964d1f4fa,Oct_29_2020_08:23:14.ml,0,compile,Type error
+7125c63544b50d3e21accd0964d1f4fa,Oct_29_2020_08:27:40.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:45:43.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:59:18.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:59:39.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:43:23.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:42:16.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:35:06.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:55:56.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:33:29.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:57:33.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:45:27.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:42:45.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_13:05:45.ml,0,compile,Type error
+aaeeedba617dd9868e18f6bf82cc838e,Oct_30_2020_12:33:00.ml,0,compile,Type error
+598dbf536f921f0731168a43318ff513,Oct_25_2020_01:51:52.ml,0,compile,Type error
+598dbf536f921f0731168a43318ff513,Oct_25_2020_01:51:29.ml,0,compile,Type error
+598dbf536f921f0731168a43318ff513,Oct_25_2020_01:51:20.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:28:16.ml,0,compile,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/compileCodeHW5_question_based/exercise/solution.ml"", line 3, characters 4-10:
+Unbound constructor Quebec
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:29:31.ml,0,compile,Unbound value
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:52:57.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:33:27.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:28:41.ml,0,compile,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/compileCodeHW5_question_based/exercise/solution.ml"", line 3, characters 4-11:
+Unbound constructor Toronto
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:56:04.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:54:35.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_27_2020_19:10:39.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:56:26.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:57:13.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:34:05.ml,0,compile,Type error
+89be5d0809c21a6ce69ba8f432b149b5,Oct_26_2020_22:57:02.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:19:27.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:21:30.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:19:44.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:19:14.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:18:41.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:18:46.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:17:31.ml,0,compile,Unbound value
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:16:35.ml,0,compile,Unbound value
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:17:59.ml,0,compile,Unbound value
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:19:22.ml,0,compile,Type error
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:19:04.ml,0,compile,Unbound value
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:18:11.ml,0,compile,Unbound value
+c83cd8aec144497226a05bf4c251bbfc,Oct_30_2020_20:18:26.ml,0,compile,Unbound value
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:43:56.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:45:57.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:44:35.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:45:02.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:38:33.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:41:56.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:35:24.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:43:12.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:38:58.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:41:34.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:35:09.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:46:40.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:35:00.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:36:56.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:38:08.ml,0,compile,Type error
+72efb41c3b713813c7bf2bf3679a7cb8,Oct_28_2020_10:33:05.ml,0,compile,Unbound value
+6b3f295ece9fa0f96019f2bb9e48f36a,Oct_26_2020_00:02:33.ml,0,compile,Type error
+bd7b36bfe8d66f18eea48cca06a2e4e2,Oct_27_2020_22:50:20.ml,0,eval,Type error
+bd7b36bfe8d66f18eea48cca06a2e4e2,Oct_27_2020_22:18:43.ml,0,eval,Type error
+bd7b36bfe8d66f18eea48cca06a2e4e2,Oct_27_2020_22:20:38.ml,0,eval,Type error
+bd7b36bfe8d66f18eea48cca06a2e4e2,Oct_27_2020_22:40:40.ml,0,eval,Type error
+bd7b36bfe8d66f18eea48cca06a2e4e2,Oct_27_2020_22:40:30.ml,0,eval,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:55:09.ml,0,eval,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:20:12.ml,0,eval,Unbound value
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:23:29.ml,0,eval,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:21:49.ml,0,eval,Type error
+2e8b67ff6ec42ca2a35065901de07638,Oct_28_2020_19:16:12.ml,0,eval,Unbound value
+76dcfda84c0890ca135f54d51a2d27e0,Oct_29_2020_23:17:54.ml,0,eval,Unbound value
+76dcfda84c0890ca135f54d51a2d27e0,Oct_30_2020_00:43:55.ml,0,eval,Type error
+76dcfda84c0890ca135f54d51a2d27e0,Oct_30_2020_00:43:48.ml,0,eval,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/evalCodeHW5_question_based/exercise/solution.ml"", line 7, characters 38-40:
+This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+76dcfda84c0890ca135f54d51a2d27e0,Oct_29_2020_23:14:39.ml,0,eval,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/evalCodeHW5_question_based/exercise/solution.ml"", line 5, characters 68-75:
+This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+72f3b0ac2d59eb8cb1c28d2b4630554f,Oct_29_2020_14:33:43.ml,0,eval,Type error
+72f3b0ac2d59eb8cb1c28d2b4630554f,Oct_29_2020_14:33:03.ml,0,eval,Type error
+72f3b0ac2d59eb8cb1c28d2b4630554f,Oct_29_2020_14:31:38.ml,0,eval,Type error
+41ae1961ad83962e7022b1b5114cc9df,Oct_30_2020_03:21:22.ml,0,eval,Type error
+41ae1961ad83962e7022b1b5114cc9df,Oct_30_2020_03:22:12.ml,0,eval,Type error
+41ae1961ad83962e7022b1b5114cc9df,Oct_30_2020_03:24:07.ml,0,eval,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:13:37.ml,0,eval,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:13:01.ml,0,eval,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:51:40.ml,0,eval,Type error
+871f749d3430e6336599099df5eba5c7,Oct_27_2020_20:15:08.ml,0,eval,Type error
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:23:51.ml,0,eval,Unbound value
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:24:11.ml,0,eval,Unbound value
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:29:54.ml,0,eval,Type error
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:59:19.ml,0,eval,Type error
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:28:47.ml,0,eval,Unbound value
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:22:54.ml,0,eval,Unbound value
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:33:04.ml,0,eval,Type error
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_26_2020_18:33:58.ml,0,eval,Type error
+6de01b2ffd5fb44596cc9a8950b52a3d,Oct_27_2020_02:49:24.ml,0,eval,Type error
+9c4023d66a98e831354b9b6942e473e7,Oct_24_2020_21:56:31.ml,0,eval,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:46:21.ml,0,eval,Type error
+9752899a0b63709905d8eb59932740f6,Oct_29_2020_20:46:59.ml,0,eval,Type error
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:29:25.ml,0,eval,Unbound value
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:36:25.ml,0,eval,Type error
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:31:10.ml,0,eval,Type error
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:31:35.ml,0,eval,Type error
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:38:45.ml,0,eval,Type error
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:33:16.ml,0,eval,Unbound value
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:36:36.ml,0,eval,Type error
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:31:47.ml,0,eval,Type error
+e94ed6c369997299624028ad6be817ea,Oct_27_2020_18:33:35.ml,0,eval,Unbound value
+8c6e0dcaf51e4e39bf632c8c17119f38,Oct_24_2020_20:14:34.ml,0,eval,Type error
+8c6e0dcaf51e4e39bf632c8c17119f38,Oct_24_2020_20:15:02.ml,0,eval,Type error
+8c6e0dcaf51e4e39bf632c8c17119f38,Oct_24_2020_20:21:21.ml,0,eval,Type error
+8c6e0dcaf51e4e39bf632c8c17119f38,Oct_24_2020_20:13:39.ml,0,eval,Type error
+8c6e0dcaf51e4e39bf632c8c17119f38,Oct_24_2020_20:15:35.ml,0,eval,Type error
+4bf74b57a469455ca352d3b147414c18,Oct_24_2020_15:18:17.ml,0,eval,Type error
+4bf74b57a469455ca352d3b147414c18,Oct_24_2020_15:22:05.ml,0,eval,Type error
+76c2da7e6f4944f798be85320fe47efe,Oct_28_2020_19:53:14.ml,0,eval,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+File ""zips_fall2020/evalCodeHW5_question_based/exercise/solution.ml"", line 4, characters 49-53:
+This variant expression is expected to have type unit
+       The constructor :: does not belong to type unit
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+
+
+"
+76c2da7e6f4944f798be85320fe47efe,Oct_28_2020_19:53:57.ml,0,eval,Arguments Application
+76c2da7e6f4944f798be85320fe47efe,Oct_28_2020_19:54:19.ml,0,eval,Unbound value
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:46:39.ml,0,eval,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:47:38.ml,0,eval,Type error
+220fe3594c21f49b4b938a03436d97ad,Oct_30_2020_17:45:39.ml,0,eval,Type error
+dfac497c5c5abae03eb7237ea8c593ec,Oct_25_2020_11:45:14.ml,0,eval,Type error
+dfac497c5c5abae03eb7237ea8c593ec,Oct_23_2020_19:56:06.ml,0,eval,Type error
+dfac497c5c5abae03eb7237ea8c593ec,Oct_23_2020_19:57:46.ml,0,eval,Type error
+1f008758750b6177fe85db106772ea0c,Oct_24_2020_11:34:30.ml,0,eval,Type error
+1f008758750b6177fe85db106772ea0c,Oct_24_2020_11:36:23.ml,0,eval,Type error
+9f81f2601e9c42377f97662efd179708,Oct_27_2020_03:33:47.ml,0,eval,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:09:16.ml,0,eval,Type error
+1246a05ce6852a6152b7a584b6c1d965,Oct_29_2020_17:09:10.ml,0,eval,Type error
+353ebc334ebc49dc488247da6776f007,Oct_25_2020_13:43:50.ml,0,eval,Type error
+353ebc334ebc49dc488247da6776f007,Oct_25_2020_14:19:42.ml,0,eval,Type error
+353ebc334ebc49dc488247da6776f007,Oct_25_2020_14:04:52.ml,0,eval,Syntax error
+353ebc334ebc49dc488247da6776f007,Oct_25_2020_13:45:25.ml,0,eval,Type error
+353ebc334ebc49dc488247da6776f007,Oct_25_2020_13:42:48.ml,0,eval,Type error
+353ebc334ebc49dc488247da6776f007,Oct_25_2020_13:44:18.ml,0,eval,Type error
+353ebc334ebc49dc488247da6776f007,Oct_25_2020_13:43:14.ml,0,eval,Type error
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_19:43:47.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_20:36:01.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_16:34:50.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_20:39:36.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:36:12.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_16:19:34.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:19:06.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_19:44:09.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_16:36:02.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_16:35:05.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_22:03:26.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_16:36:08.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_19:13:20.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:46:17.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:45:52.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_23_2020_02:40:06.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:35:22.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_00:54:57.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_19:53:09.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_01:21:23.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_01:21:07.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:39:38.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_23_2020_02:51:08.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_16:06:41.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_24_2020_01:22:57.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_22:02:58.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:39:22.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_21:32:08.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_20:26:08.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_20:41:29.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_20:41:57.ml,0,grade,Unbound value
+157b29a169fd8739788f4b207a71e78e,Oct_25_2020_16:35:25.ml,0,grade,Unbound value
+7fe8845efec4fea2c90bdad54bda27d1,Oct_29_2020_17:52:58.ml,0,grade,Unbound value

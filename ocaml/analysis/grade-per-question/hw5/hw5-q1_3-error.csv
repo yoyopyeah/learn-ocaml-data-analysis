@@ -1,0 +1,420 @@
+id,timestamp,grade,event_key,error_category
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:13:07.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:00:43.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:02:51.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:04:18.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:03:42.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:08:42.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:12:32.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_31_2020_00:53:27.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+2fdc24731ff44c673ea9139769df29c4,Oct_30_2020_22:27:20.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+3ce37dd3ecada97b01471d51302f9e69,Oct_24_2020_17:51:42.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+3ce37dd3ecada97b01471d51302f9e69,Oct_24_2020_17:52:55.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+1709b4a5fc3a0dcec1357dd186d7f368,Oct_29_2020_02:05:13.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_19:37:12.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_15:18:12.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_19:55:51.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_19:59:07.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_14:30:39.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_15:14:51.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_20:06:53.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+bb82eeafa80bd4a30c4f4bb10296098d,Oct_29_2020_19:57:39.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+9752899a0b63709905d8eb59932740f6,Oct_30_2020_02:03:07.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_17:57:55.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_04:33:00.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_17:43:02.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_17:44:09.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_04:10:46.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_04:28:33.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_17:57:09.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+d64b5e45ea7bd846bbdf925b681b2092,Oct_30_2020_04:10:19.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_30_2020_23:56:45.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+bd477a95c707ee5cd0cf12efcfa0529b,Oct_30_2020_22:06:50.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+dc98919f4efd48a587ac77a1a9a86fa0,Oct_27_2020_00:14:04.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[KError in user code:
+
+
+
+
+grader outcomes:
+val print_html : 'a -> 'b = <fun>
+exception NotImplemented
+exception Fail
+type weight = int
+type 'a graph = { nodes : 'a list; edges : ('a * 'a * weight) list; }
+type 'a susp = Susp of (unit -> 'a)
+val force : 'a susp -> 'a = <fun>
+val delay : (unit -> 'a) -> 'a susp = <fun>
+type 'a str = { hd : 'a; tl : 'a str susp; }
+val map : ('a -> 'b) -> 'a str -> 'b str = <fun>
+val times : int -> int str -> int str = <fun>
+val ( := ) : 'a -> 'b -> 'c = <fun>
+val ignore : 'a -> 'b = <fun>
+Exception: NotImplemented.
+Raised at file ""zips_fall2020/gradeHW5_question_based/exercise/solution.ml"", line 1, characters 23-37
+Called from unknown location
+
+
+"
+dc98919f4efd48a587ac77a1a9a86fa0,Oct_27_2020_00:10:22.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+dc98919f4efd48a587ac77a1a9a86fa0,Oct_26_2020_23:53:17.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+5547acedc6f91b0d9d200e30ee842399,Oct_23_2020_05:57:41.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+5547acedc6f91b0d9d200e30ee842399,Oct_23_2020_05:58:49.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_31_2020_02:51:32.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_31_2020_02:48:33.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_30_2020_19:19:02.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_30_2020_19:30:45.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_30_2020_19:48:30.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_30_2020_22:24:53.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_31_2020_02:50:24.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_31_2020_02:43:57.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
+ca7f9f308b17524c30488e4ad3da5df7,Oct_31_2020_02:37:49.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"
+6b3f295ece9fa0f96019f2bb9e48f36a,Oct_24_2020_15:09:53.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[KKilled
+"

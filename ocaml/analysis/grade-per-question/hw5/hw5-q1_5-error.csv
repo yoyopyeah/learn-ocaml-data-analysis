@@ -1,0 +1,9 @@
+id,timestamp,grade,event_key,error_category
+bd7b36bfe8d66f18eea48cca06a2e4e2,Oct_31_2020_03:19:44.ml,0,grade,"[ Loading the prelude. ]
+[K[ Preparing the test environment. ]
+[K[ Loading your code. ]
+[K[ Loading the solution. ]
+[K[ Preparing to launch the tests. ]
+[K[ Launching the test bench. ]
+[K[ Grading exercise: control flow and backtracking. ]
+[K"
