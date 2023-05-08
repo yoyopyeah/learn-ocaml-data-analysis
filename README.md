@@ -83,6 +83,8 @@ Where analysis related data and output are located.
 
 ## Data analysis
 - Error distribution
+   - Homework level
+   - Question level
 - How long students worked on a particular problem. Slice by
    - number of submission
    - time
