@@ -8,6 +8,7 @@
    - Python script `bin/question_split.py` facilitates connection to ssh remote database, structure outputs, and navigate data processing traffics between Python script and Ocaml script (`bin/main.ml`)
       - See output project structure in [section](#project-structure) below.
 2. Run ocaml grader on per question basis. The command follows the pattern `learn-ocaml grade --exercises="./exercises/hw1/question1/exercise" --grade-student="./exercises/hw1/question1/student_submissions/stu.ml" --timeout=60 --dump-reports grade_report`. The exercises and student submissions can be stored anywhere on the file system provided the correct path is passed to the `--exercises` and `--grade-student` flags.
+3. Perform data analysis.
 
 ## Usage
 Python script calls for the execution of the dune project. Before running, set up the environment:
@@ -81,12 +82,9 @@ Where analysis related data and output are located.
 
 
 ## Data analysis
-- how many type errors & how many syntax errors
-- how long students worked on a particular problem
-   - Number of submission
+- Error distribution
+- How long students worked on a particular problem. Slice by
+   - number of submission
    - time
-- grade progression per question
+- Grade progression per question
   - once type checked how quickly a student gets 100
-
-
-id, timestamp, error_type
