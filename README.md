@@ -10,6 +10,7 @@
 2. Run ocaml grader on per question basis. The command follows the pattern `learn-ocaml grade --exercises="./exercises/hw1/question1/exercise" --grade-student="./exercises/hw1/question1/student_submissions/stu.ml" --timeout=60 --dump-reports grade_report`. The exercises and student submissions can be stored anywhere on the file system provided the correct path is passed to the `--exercises` and `--grade-student` flags.
 
 ## Usage
+First, at line 113 of `bin/question_split.py`, change the mongoSession key to personal id_rsa, that have be previously granted access to the server.
 Python script calls for the execution of the dune project. Before running, set up the environment:
 ```
 eval $(opam env)
