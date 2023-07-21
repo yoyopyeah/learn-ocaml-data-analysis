@@ -7,6 +7,7 @@ import re
 import os
 import subprocess
 import shutil
+from pymongo import MongoClient
 
 # global variables
 fq = json.load(open("analysis/info/fq.json", "r"))
@@ -25,19 +26,34 @@ def extract_function_name(fun, verbose=False):
 def split_submission_by_question(hw, submission, studentId, timestamp):
   dune_cmd = f"dune exec ocaml \"{submission}\""                
   process = subprocess.run(dune_cmd, shell=True, timeout=30, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-  if (process.stderr):
-    f = open(f"analysis/out/{hw}/err.json", "r")
-    data = json.load(f)
-    if "Lexer.Error" in process.stderr:
-      data[studentId]["lexer_errors"].append(timestamp)
-    elif "Syntaxerr" in process.stderr:
-      data[studentId]["syntax_errors"].append(timestamp)
-    else :
-      data[studentId]["other_err"].append(process.stderr)
-    f.close()
-    with open(f"analysis/out/{hw}/err.json", "w") as jsonFile:
+
+  f = open(f"analysis/out/{hw}/err.json", "r")
+
+  data = json.load(f)
+  print('*******************')
+  print(process.stderr)
+  print('*******************')
+  with open(f"analysis/out/{hw}/err.json", "w") as jsonFile:
+    if "Lexer.Error" in process.stderr or "Syntaxerr" in process.stderr:
+      data[studentId]["lexer_errors" if "Lexer.Error" in process.stderr else "syntax_errors"].append(timestamp)
       json.dump(data, jsonFile, indent=2)
-    return False
+      return False
+
+    f.close()
+  
+  # if (process.stderr):
+  #   f = open(f"analysis/out/{hw}/err.json", "r")
+  #   data = json.load(f)
+  #   if "Lexer.Error" in process.stderr:
+  #     data[studentId]["lexer_errors"].append(timestamp)
+  #   elif "Syntaxerr" in process.stderr:
+  #     data[studentId]["syntax_errors"].append(timestamp)
+  #   else :
+  #     data[studentId]["other_err"].append(process.stderr)
+  #   f.close()
+  #   with open(f"analysis/out/{hw}/err.json", "w") as jsonFile:
+  #     json.dump(data, jsonFile, indent=2)
+  #   return False
 
   f = open("analysis/pretty_ast_out", "r")
   pretty_ast = f.read()
@@ -102,19 +118,21 @@ def make_hw_outdir(hw):
 
 
 ########## bulk data processing ##########
-from ssh_pymongo import MongoSession
+# from ssh_pymongo import MongoSession
 
 # connect to mongo DB
 def get_db():
-  session = MongoSession(
-    host='winter2021-comp302-backup.cs.mcgill.ca',
-    port=22,
-    user='ocaml',
-    key='/Users/yoyooolo/.ssh/id_rsa',
-    to_port=27017,
-    to_host='127.0.0.1'
-  )
-  return session.connection["sanitized-anon"]
+  # session = MongoSession(
+  #   host='winter2021-comp302-backup.cs.mcgill.ca',
+  #   port=22,
+  #   user='ocaml',
+  #   key='/Users/yoyooolo/.ssh/id_rsa',
+  #   to_port=27017,
+  #   to_host='127.0.0.1'
+  # )
+  # return session.connection["sanitized-anon"]
+  client = MongoClient("localhost", 27017)
+  return client["sanitized-anon"]
 
 
 ########## main ##########
